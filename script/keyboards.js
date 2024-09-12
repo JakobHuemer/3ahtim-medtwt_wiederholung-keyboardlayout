@@ -11,7 +11,9 @@ const Keyboards = {
         Ideal for extensive data entry and office use. Number pad typically on the right, but some have it on the left.</p>
     `,
         keyNumber: 104,
-        withLayout: (layout) = {},
+        withLayout: (layout) => {
+            return layout.keys;
+        }
     },
     COMPACT1800: {
         displayName: '1800 Compact (96%)',

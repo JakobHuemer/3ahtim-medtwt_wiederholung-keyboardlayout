@@ -1,0 +1,105 @@
+@font-face {
+    font-family: 'Ubuntu Mono';
+    src: url('../assets/Ubuntu_Sans_Mono/static/UbuntuSansMono-Regular.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+/* US ANSI FULL SIZE */
+#keyboard {
+
+    --key-size: 4em;
+    --key-gap: calc(var(--key-size) / 8);
+    --key-half: calc(var(--key-size) / 2 - var(--key-gap) / 2);
+
+    font-family: "Ubuntu Mono", sans-serif;
+    color: black;
+    font-weight: 700;
+    font-size: .8rem;
+
+    display: grid;
+    flex-direction: column;
+    gap: calc(var(--key-size) / 8);
+    width: calc(var(--key-size) * 51 / 2);
+
+    grid-template-columns: repeat(6, var(--key-size)) var(--key-half) repeat(4, var(--key-size)) var(--key-half) repeat(4, var(--key-size)) var(--key-half) repeat(3, var(--key-size)) ;
+    grid-template-rows: repeat(6, var(--key-size));
+
+    .keyslot:nth-child(2) {
+        grid-column: 3 / 4;
+    }
+    .keyslot:nth-child(6) {
+        grid-column: 8 / 9;
+    }
+    .keyslot:nth-child(10) {
+        grid-column: 13 / 14;
+    }
+    .keyslot:nth-child(14) {
+        grid-column: 18 / 19;
+    }
+
+
+}
+
+
+.key {
+    position: relative;
+    border-radius: .5em;
+    --key-color-top-prim: #f3e9e9;
+    --key-color-top-sec: #e0d0d0;
+    --key-color-front: #d9c4bb;
+    --key-color-side: #BBB5AA;
+    --key-color-back: #a29992;
+    background: conic-gradient(from 38deg at 50% 37%, var(--key-color-back) 2%, var(--key-color-side) 6%,
+    var(--key-color-side) 25%, var(--key-color-front) 29%,
+    var(--key-color-front) 50%, var(--key-color-side) 54%,
+    var(--key-color-side) 73%, var(--key-color-back) 76%);
+    height: 100%;
+    width: 100%;
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    --key-top: 4%;
+    --key-top-height: 70%;
+    --key-top-width: 80%;
+    --key-corner-gradient-amount: 2;
+
+
+    .keycode {
+        position: absolute;
+        left: 0;
+        bottom: .5%;
+        font-weight: 500;
+        width: 100%;
+    }
+
+    .key-top {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+
+        height: var(--key-top-height);
+        width: var(--key-top-width);
+        background: radial-gradient(var(--key-color-top-prim), var(--key-color-top-sec));
+        border-radius: .3em;
+        padding-inline: .2em;
+
+        position: absolute;
+        top: var(--key-top);
+        span {
+            width: 100%;
+        }
+    }
+}
