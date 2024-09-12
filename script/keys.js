@@ -6,6 +6,7 @@ class Key {
         this.labelLocation = labelLocation;
 
         this.element = document.documentElement('div');
+        this.element.classList.add("key")
         this.element.id = 'key-' + this.id;
         this.element.innerHTML = `
             <span
@@ -18,6 +19,8 @@ class Key {
         `;
     }
 }
+
+
 
 
 const Keys = {
