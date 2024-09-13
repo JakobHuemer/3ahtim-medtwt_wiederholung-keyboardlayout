@@ -19,7 +19,12 @@ The next selection is the starting arrangement/layout of the keys
 - Colemak
 - Workman
 
-All layouts are based on the ANSI US layout.
+All layouts are based on the ANSI US layout and keys although this may change if there is enough timeout for
+different language layouts as layouts need some amount of work to correctly import them into the code.
+
+#### Use custom Layout
+
+The "fake" exported layout files may be able to be accepted as a start layout to save someone time
 
 ### Detailscreen, Configuration of the keyboard layout
 
@@ -29,6 +34,9 @@ with other keys which are not utilized in the keyboard.
 The user can drag and drop keys from the side pane to the keyboard and 
 vice verca.
 
+#### Themes
+
+Themes to change the keyboard look are available
 
 ### Endscreen, Fake export of keyboard layout to a txt file
 
