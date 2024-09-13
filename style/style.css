@@ -29,39 +29,28 @@
     flex-direction: column;
     gap: calc(var(--key-size) / 8);
     width: calc(var(--key-size) * 51 / 2);
-
-    grid-template-columns: repeat(6, var(--key-size)) var(--key-half) repeat(4, var(--key-size)) var(--key-half) repeat(4, var(--key-size)) var(--key-half) repeat(3, var(--key-size)) ;
-    grid-template-rows: repeat(6, var(--key-size));
-
-    .keyslot:nth-child(2) {
-        grid-column: 3 / 4;
-    }
-    .keyslot:nth-child(6) {
-        grid-column: 8 / 9;
-    }
-    .keyslot:nth-child(10) {
-        grid-column: 13 / 14;
-    }
-    .keyslot:nth-child(14) {
-        grid-column: 18 / 19;
-    }
-
-
 }
 
 
 .key {
     position: relative;
     border-radius: .5em;
-    --key-color-top-prim: #f3e9e9;
-    --key-color-top-sec: #e0d0d0;
-    --key-color-front: #d9c4bb;
-    --key-color-side: #BBB5AA;
-    --key-color-back: #a29992;
-    background: conic-gradient(from 38deg at 50% 37%, var(--key-color-back) 2%, var(--key-color-side) 6%,
-    var(--key-color-side) 25%, var(--key-color-front) 29%,
-    var(--key-color-front) 50%, var(--key-color-side) 54%,
-    var(--key-color-side) 73%, var(--key-color-back) 76%);
+
+    overflow: hidden;
+    --key-color-top-prim: #BAB9BE;
+    --key-color-top-sec: #B9B8BD;
+    --key-color-front: #82858E;
+    --key-color-side: #5a5a5e;
+    --key-color-back: #343635;
+
+
+    /*background: conic-gradient(from 38deg at 50% 37%, var(--key-color-back) 2%, var(--key-color-side) 6%,*/
+    /*var(--key-color-side) 25%, var(--key-color-front) 29%,*/
+    /*var(--key-color-front) 50%, var(--key-color-side) 54%,*/
+    /*var(--key-color-side) 73%, var(--key-color-back) 76%);*/
+
+    background: blue;
+
     height: 100%;
     width: 100%;
     text-align: center;
@@ -70,13 +59,84 @@
     justify-content: center;
     align-items: center;
 
-    --key-top: 4%;
-    --key-top-height: 70%;
-    --key-top-width: 80%;
+    --key-top: .3em;
+    --key-top-height: calc(100% - 1.7em);
+    --key-top-width: calc(100% - 1.2em);
     --key-corner-gradient-amount: 2;
 
+    &::after {
+        position: absolute;
+        content: "";
+        width: calc(var(--key-top-width) - .5em);
+        background: linear-gradient(0deg, var(--key-color-front) 50%, var(--key-color-back) 50%);
+        height: 100%;
+        top: 0;
+        left: 50%;
+        z-index: 5;
+        transform: translateX(-50%);
+    }
+
+    &::before {
+        content: "awd";
+        position: absolute;
+        width: 100%;
+        height: calc(var(--key-top-height) - .5em);
+        background: var(--key-color-side);
+        top: calc(var(--key-top) + .5em);
+        z-index: 4;
+    }
+
+
+    .bg {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background: orange;
+
+
+        .bg-item {
+            position: absolute;
+            height: 1.5em;
+            width: 1.5em;
+            background: purple;
+        }
+
+        .bg-left-top {
+            top: 0;
+            left: 0;
+            background: conic-gradient(from -90deg at 60% 30%, var(--key-color-back) 95deg, var(--key-color-side) 150deg);
+            transform: scaleX(-1);
+
+
+        }
+
+        .bg-right-top {
+            top: 0;
+            right: 0;
+            background: conic-gradient(from -90deg at 60% 30%, var(--key-color-back) 95deg, var(--key-color-side) 150deg);
+        }
+
+        .bg-left-bottom {
+            bottom: 0;
+            left: 0;
+            height: 2em;
+            background: conic-gradient(at 60% 35%, var(--key-color-side) 150deg, var(--key-color-front) 180deg);
+            transform: scaleX(-1);
+
+        }
+
+        .bg-right-bottom {
+            bottom: 0;
+            right: 0;
+            height: 2em;
+            background: conic-gradient(at 60% 35%, var(--key-color-side) 150deg, var(--key-color-front) 180deg);
+        }
+    }
 
     .keycode {
+        z-index: 10;
         position: absolute;
         left: 0;
         bottom: .5%;
@@ -85,6 +145,7 @@
     }
 
     .key-top {
+        z-index: 10;
         display: flex;
         flex-direction: column-reverse;
         justify-content: center;
@@ -98,6 +159,7 @@
 
         position: absolute;
         top: var(--key-top);
+
         span {
             width: 100%;
         }

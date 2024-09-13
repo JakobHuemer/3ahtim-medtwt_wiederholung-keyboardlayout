@@ -29,11 +29,19 @@ class Key {
             <div class="key"
                 ${ this.keyElement ? `style="${ this.keyElement.getAttribute('style') }"` : '' }
                 >
+                
+                <div class="bg">
+                    <div class="bg-item bg-left-top"></div>
+                    <div class="bg-item bg-right-top"></div>
+                    <div class="bg-item bg-left-bottom"></div>
+                    <div class="bg-item bg-right-bottom"></div>
+                </div>
+                
                 <div style="${ this.labelLocation !== 0 ? `justify-content: end;` : '' } ${ this.isLittleFont !== 0 ? `font-size: 80%;` : '' }"
                  class="key-top">
                     <span
                        ${ this.labelLocation === 1 ? `style="text-align: left"` :
-                            this.labelLocation === 2 ? `style="test-align: right"` : '' }
+                            this.labelLocation === 2 ? `style="text-align: right"` : '' }
                             class="representation">${ this.representation }</span>
                      
                        ${ this.secondaryRepresentation ? `
