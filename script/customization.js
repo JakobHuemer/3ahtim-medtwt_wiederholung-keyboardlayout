@@ -1,6 +1,39 @@
 const THEMES = {
 
     // displayname => replace "_" with " " and css capitalize
+    WHITE: {
+        "--key-color-top-prim": "#e8e8e8",
+        "--key-color-top-sec": "#d0d0d0",
+        "--key-color-front": "#b6b6b6",
+        "--key-color-side": "#a2a2a2",
+        "--key-color-back": "#919191",
+        "--key-font-color": "#000000"
+    },
+    DARK: {
+        "--key-color-top-prim": "#2a2a2a",
+        "--key-color-top-sec": "#1c1c1c",
+        "--key-color-front": "#151515",
+        "--key-color-side": "#0c0c0c",
+        "--key-color-back": "#000000",
+        "--key-font-color": "#c0cae1"
+    },
+    CATPPUCCIN_MOCHA: {
+        "--key-color-top-prim": "#3b405e",
+        "--key-color-top-sec": "#2e324b",
+        "--key-color-front": "#202334",
+        "--key-color-side": "#1e2131",
+        "--key-color-back": "#171926",
+        "--key-font-color": "#C6D0F5"
+    },
+    HIGH_CONTRAST: {
+        "--key-color-top-prim": "#000000",
+        "--key-color-top-sec": "#212121",
+        "--key-color-front": "#3a3a3a",
+        "--key-color-side": "#2c2c2c",
+        "--key-color-back": "#111111",
+        "--key-font-color": "#FFFFFF"
+
+    },
     SILVER: {
         "--key-color-top-prim": "#BAB9BE",
         "--key-color-top-sec": "#A0A0A5",
@@ -48,13 +81,5 @@ const THEMES = {
         "--key-color-side": "#1565C0",
         "--key-color-back": "#0D47A1",
         "--key-font-color": "#FFFFFF"
-    },
-    CATPPUCCIN_MOCHA: {
-        "--key-color-top-prim": "#CDD6F4",
-        "--key-color-top-sec": "#B4BEFE",
-        "--key-color-front": "#89B4FA",
-        "--key-color-side": "#45475A",
-        "--key-color-back": "#1E1E2E",
-        "--key-font-color": "#11111B"
     }
 };

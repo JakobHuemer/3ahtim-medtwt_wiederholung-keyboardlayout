@@ -313,7 +313,7 @@ const Keyboards = {
                 layout[2].slice(0, 17),
                 layout[3].slice(0, 13),
                 layout[4].slice(0, 13),
-                layout[5].slice(0, 12),
+                layout[5].slice(0, 11),
             ];
         },
         positions: [

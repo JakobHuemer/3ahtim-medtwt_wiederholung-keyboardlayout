@@ -1,1 +1,3 @@
-displayKeyboard(Keyboards.FORTY_PERCENT, Layouts.QWERTY)
+displayKeyboard(Keyboards.FULL_SIZED, Layouts.Workman)
+
+switchTheme(THEMES.CATPPUCCIN_MOCHA)

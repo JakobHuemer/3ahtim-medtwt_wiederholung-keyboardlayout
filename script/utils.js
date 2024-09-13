@@ -16,7 +16,7 @@ function displayKeyboard(keyboard, layout) {
             keyboardElement.innerHTML += `
                 <div 
                     style="
-                        position: absolute; 
+                        position: absolute;
                         top: calc(var(--key-size) * ${keyLocDim.y}); 
                         left: calc(var(--key-size) * ${keyLocDim.x}); 
                         width: calc(var(--key-size) * ${keyLocDim.width}); 
