@@ -1,6 +1,7 @@
 const THEMES = {
+
+    // displayname => replace "_" with " " and css capitalize
     SILVER: {
-        displayName: "Sleek Silver",
         "--key-color-top-prim": "#BAB9BE",
         "--key-color-top-sec": "#A0A0A5",
         "--key-color-front": "#82858E",
@@ -9,7 +10,6 @@ const THEMES = {
         "--key-font-color": "#000000"
     },
     NEON_SUNSET: {
-        displayName: "Neon Sunset",
         "--key-color-top-prim": "#FF6B6B",
         "--key-color-top-sec": "#FF8E8E",
         "--key-color-front": "#4ECDC4",
@@ -18,7 +18,6 @@ const THEMES = {
         "--key-font-color": "#FFFFFF"
     },
     FOREST_MIST: {
-        displayName: "Forest Mist",
         "--key-color-top-prim": "#7DAE9E",
         "--key-color-top-sec": "#6A9A8B",
         "--key-color-front": "#5C8D76",
@@ -27,7 +26,6 @@ const THEMES = {
         "--key-font-color": "#E0E0E0"
     },
     LAVENDER_DREAMS: {
-        displayName: "Lavender Dreams",
         "--key-color-top-prim": "#E0B0FF",
         "--key-color-top-sec": "#C18EE0",
         "--key-color-front": "#9A8CFF",
@@ -36,7 +34,6 @@ const THEMES = {
         "--key-font-color": "#FFFFFF"
     },
     COFFEE_BREAK: {
-        displayName: "Coffee Break",
         "--key-color-top-prim": "#D7CCC8",
         "--key-color-top-sec": "#BCAAA4",
         "--key-color-front": "#8D6E63",
@@ -45,7 +42,6 @@ const THEMES = {
         "--key-font-color": "#FFFFFF"
     },
     DEEP_OCEAN: {
-        displayName: "Deep Ocean",
         "--key-color-top-prim": "#64B5F6",
         "--key-color-top-sec": "#42A5F5",
         "--key-color-front": "#1E88E5",
@@ -54,7 +50,6 @@ const THEMES = {
         "--key-font-color": "#FFFFFF"
     },
     CATPPUCCIN_MOCHA: {
-        displayName: "Catppuccin Mocha",
         "--key-color-top-prim": "#CDD6F4",
         "--key-color-top-sec": "#B4BEFE",
         "--key-color-front": "#89B4FA",

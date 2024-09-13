@@ -17,7 +17,7 @@ class Key {
     }
 
     enableKeycode() {
-        this.showKeycode = true
+        this.showKeycode = true;
         this.render();
         return this;
     }
@@ -41,7 +41,7 @@ class Key {
                  class="key-top">
                     <span
                        ${ this.labelLocation === 1 ? `style="text-align: left"` :
-                            this.labelLocation === 2 ? `style="text-align: right"` : '' }
+            this.labelLocation === 2 ? `style="text-align: right"` : '' }
                             class="representation">${ this.representation }</span>
                      
                        ${ this.secondaryRepresentation ? `
@@ -59,7 +59,7 @@ class Key {
     }
 
     littleFont() {
-        this.isLittleFont = true
+        this.isLittleFont = true;
         this.render();
         return this;
     }
@@ -125,7 +125,7 @@ const Keys = {
 // Special Keys
     ESC: (new Key(49, 'ESCAPE', 1, 'Esc')),
     TAB: (new Key(50, 'TAB', 1, 'Tab')),
-    CAPITAL: (new Key(51, 'CAPSLOCK', 0, 'Caps Lock')),
+    CAPITAL: (new Key(51, 'CAPSLOCK', 1, 'Caps Lock')),
     LSHIFT: (new Key(52, 'LEFT', 1, 'Shift')).littleFont().enableKeycode(),
     RSHIFT: (new Key(53, 'RIGHT', 2, 'Shift')).littleFont().enableKeycode(),
     LCONTROL: (new Key(54, 'LEFT', 1, 'CTRL')).enableKeycode(),
@@ -137,7 +137,7 @@ const Keys = {
     MENU: (new Key(60, 'MENU', 0, 'MENU')),
     SPACE: (new Key(61, 'SPACE', 0, ' ')).enableKeycode(),
     ENTER: (new Key(62, 'ENTER', 2, 'Return')).littleFont(),
-    BACKSPACE: (new Key(63, 'BCKSPACE', 0, 'Delete')).littleFont().enableKeycode(),
+    BACKSPACE: (new Key(63, 'BACKSPACE', 2, 'Delete')).littleFont().enableKeycode(),
     TILDE: (new Key(64, 'GRAVE', 0, '`', '~')),
     MINUS: (new Key(65, 'MINUS', 0, '-', '_')),
     EQUALS: (new Key(66, 'EQUALS', 0, '=', '+')),
@@ -185,4 +185,6 @@ const Keys = {
     ADD: (new Key(102, 'ADD', 0, '+')),
     DECIMAL: (new Key(103, 'DECIMAL', 0, '.')),
     NUMPADENTER: (new Key(104, 'NUMPAD', 2, 'Enter')).littleFont().enableKeycode(),
+
+    GENERIC: (new Key(105, 'GENERIC', 0, '')) // placeholder key,
 };
