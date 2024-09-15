@@ -20,7 +20,7 @@ const THEMES = {
     BOTH_CATPPUCCIN_MOCHA: {
         "--key-color-top-prim": "#3b405e",
         "--key-color-top-sec": "#2e324b",
-        "--key-color-front": "#202334",
+        "--key-color-front": "#282b41",
         "--key-color-side": "#1e2131",
         "--key-color-back": "#171926",
         "--key-font-color": "#C6D0F5"
@@ -89,5 +89,13 @@ const THEMES = {
         "--key-color-side": "#7D7A5C",
         "--key-color-back": "#4d4a37",
         "--key-font-color": "#000000"
+    },
+    DEBUG: {
+        "--key-font-color": "#FFFFFF",
+        "--key-color-top-prim": "#3A86FF",
+        "--key-color-top-sec": "#2667E0",
+        "--key-color-front": "#4CAF50",
+        "--key-color-side": "#FF6B6B",
+        "--key-color-back": "#FFD700",
     }
-};
+}

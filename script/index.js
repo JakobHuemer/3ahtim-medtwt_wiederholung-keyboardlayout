@@ -1,3 +1,12 @@
-displayKeyboard(KEYBOARD.FORTY_PERCENT, LAYOUT.QWERTY, KEY_DATA.GERMAN_KEYS)
+const keyboardElement = document.querySelector('#keyboard');
 
-switchTheme(THEMES.BOTH_SILVER)
+const KEY_SIZE = 4;
+
+document.documentElement.style.setProperty('--key-root-size', KEY_SIZE + 'em');
+
+
+displayKeyboard(KEYBOARD.FULL_SIZED, LAYOUT.QWERTY, KEY_DATA.GERMAN_KEYS);
+
+window.addEventListener('resize', () => {
+    resizeKeyboardAccordingToItsActualWidth()
+});
