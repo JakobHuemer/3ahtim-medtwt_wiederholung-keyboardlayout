@@ -35,6 +35,11 @@ with other keys which are not utilized in the keyboard.
 The user can drag and drop keys from the side pane to the keyboard and 
 vice verca.
 
+#### Custom Laynguage
+
+The language can also be selected to fit the users needs and change the bindings of the keys.
+For now only languages with a max of 2 visible bindings per key are allow and that might change.
+
 #### Homing key
 
 Maybe i will implement a switch for each key to make it a homing key.
