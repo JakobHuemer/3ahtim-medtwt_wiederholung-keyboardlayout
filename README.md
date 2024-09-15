@@ -35,9 +35,13 @@ with other keys which are not utilized in the keyboard.
 The user can drag and drop keys from the side pane to the keyboard and 
 vice verca.
 
+#### Homing key
+
+Maybe i will implement a switch for each key to make it a homing key.
+
 #### Themes
 
-Themes to change the keyboard look are available
+Themes to change the keyboards look are available
 
 ### Endscreen, Fake export of keyboard layout to a txt file
 
