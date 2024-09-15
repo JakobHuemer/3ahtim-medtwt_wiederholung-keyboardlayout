@@ -13,7 +13,7 @@ Array.prototype.unslice = function (start, end) {
     return [...this.slice(0, start), ...this.slice(end, this.length)];
 };
 
-const Keyboards = {
+const KEYBOARD = {
     FULL_SIZED: {
         displayName: 'Full-Sized (100%)',
         description: `

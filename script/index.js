@@ -1,3 +1,3 @@
-displayKeyboard(Keyboards.FULL_SIZED, Layouts.Workman)
+displayKeyboard(KEYBOARD.FULL_SIZED, LAYOUT.QWERTY, KEY_DATA.GERMAN_KEYS)
 
 switchTheme(THEMES.BOTH_SILVER)

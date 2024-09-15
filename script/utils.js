@@ -1,10 +1,23 @@
 const keyboardElement = document.querySelector("#keyboard")
 
-function displayKeyboard(keyboard, layout) {
+/**
+ *
+ * @param keyboard KEYBOARD
+ * @param layout {string}
+ * @param keyData KEY_COLLECTION
+ */
+function displayKeyboard(keyboard, layout, keyData) {
+
     const keyboardElement = document.querySelector('#keyboard');
-    console.log("layout", layout)
-    let kbLayout = keyboard.withLayout(layout);
-    console.log("kbLayout", kbLayout)
+
+    // creating the actual keys by passing language data as keyData
+    const keySet = craftKeySet(keyData);
+
+    // changing order of the keys for a specific layout
+    const craftedLayout = craftLayoutWithKeys(layout, keySet);
+
+    // the 2d array of the kb layout with the crafted keys for their own language
+    let kbLayout = keyboard.withLayout(craftedLayout);
 
     keyboardElement.style.width = keyboard.width * 4 + "em"
     keyboardElement.style.height = keyboard.height * 4 + "em"
@@ -29,14 +42,6 @@ function displayKeyboard(keyboard, layout) {
     }
 
 
-}
-
-function rnd() {
-    return Math.round(Math.random()*100) / 100
-}
-
-function evn(num) {
-    return num % 2 === 0 ? num : num + 0.01
 }
 
 function switchTheme(theme) {
