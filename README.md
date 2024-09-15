@@ -6,7 +6,8 @@
 The start screen consists of multiple keyboard sizes
 
 - Full Sized
-- Tenkeyless
+- Compact 1800
+- Ten key less
 - 75%
 - 65%
 - 60%
@@ -19,7 +20,7 @@ The next selection is the starting arrangement/layout of the keys
 - Colemak
 - Workman
 
-All layouts are based on the ANSI US layout and keys although this may change if there is enough timeout for
+All layouts are based on the ANSI US layout and keys although this may change if there is enough time for
 different language layouts as layouts need some amount of work to correctly import them into the code.
 
 #### Use custom Layout

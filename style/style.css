@@ -5,13 +5,17 @@
     font-weight: normal;
 }
 
-html {
+:root {
     --key-font-color: #000000;
-    --key-color-top-prim: #BAB9BE;
-    --key-color-top-sec: #aaa9b6;
-    --key-color-front: #82858E;
-    --key-color-side: #434346;
-    --key-color-back: #343635;
+    --key-color-top-prim: #5124ff;
+    --key-color-top-sec: #0b00a1;
+    --key-color-front: #0dea34;
+    --key-color-side: #ff5dcc;
+    --key-color-back: #d07927;
+
+
+
+    background: #202020;
 }
 
 * {
@@ -44,8 +48,26 @@ body {
 
 .keyslot {
     overflow: hidden;
-
 }
+
+
+/*.key {*/
+
+/*    position: relative;*/
+
+/*    background: purple;*/
+/*    height: 100%;*/
+/*    width: 100%;*/
+
+/*    overflow: hidden;*/
+
+/*    border-radius: .5em;*/
+
+/*    text-align: center;*/
+
+/*    display: flex;*/
+
+/*}*/
 
 
 .key {
@@ -71,29 +93,32 @@ body {
     --key-top: .3em;
     --key-top-height: calc(100% - 1.7em);
     --key-top-width: calc(100% - 1.2em);
-    --key-corner-gradient-amount: 2;
 
-    &::after {
-        position: absolute;
-        content: "";
-        width: calc(var(--key-top-width) - .5em);
-        background: linear-gradient(0deg, var(--key-color-front) 50%, var(--key-color-back) 50%);
-        height: 110%;
-        top: -5%;
-        left: 50%;
-        z-index: 5;
-        transform: translateX(-50%);
-    }
 
-    &::before {
-        content: "awd";
-        position: absolute;
-        width: 100%;
-        height: calc(var(--key-top-height) - .5em);
-        background: var(--key-color-side);
-        top: calc(var(--key-top) + .5em);
-        z-index: 4;
-    }
+    /*modern look*/
+    /*background: linear-gradient(var(--key-color-back) 5%, var(--key-color-side) 60%, var(--key-color-front));*/
+
+    /*&::after {*/
+    /*    position: absolute;*/
+    /*    content: "";*/
+    /*    width: calc(var(--key-top-width) - .5em);*/
+    /*    background: linear-gradient(0deg, var(--key-color-front) 50%, var(--key-color-back) 50%);*/
+    /*    height: 110%;*/
+    /*    top: -5%;*/
+    /*    left: 50%;*/
+    /*    z-index: 5;*/
+    /*    transform: translateX(-50%);*/
+    /*}*/
+
+    /*&::before {*/
+    /*    content: "awd";*/
+    /*    position: absolute;*/
+    /*    width: 100%;*/
+    /*    height: calc(var(--key-top-height) - .5em);*/
+    /*    background: var(--key-color-side);*/
+    /*    top: calc(var(--key-top) + .5em);*/
+    /*    z-index: 4;*/
+    /*}*/
 
 
     .bg {
@@ -103,42 +128,56 @@ body {
         top: 0;
         left: 0;
 
+        /* how much each corner element is actually bigger on every side (like padding) than is has to be to be perfect because of some
+            weird css i don't understand
+          for demonstration set --corner-overflow to 0 and see what happens
+            */
+        --corner-overflow: .2rem;
+        --corner-overflow-neg: calc(-1 * var(--corner-overflow));
+
+        --corner-bg-top: conic-gradient(
+                from -90deg
+                at calc(100% - 1em - var(--corner-overflow)) calc(1em + var(--corner-overflow)),
+                var(--key-color-back) 120deg,
+                var(--key-color-side) 140deg);
+
+        --corner-bg-bottom: conic-gradient(
+                at calc(100% - .8em - var(--corner-overflow)) calc(100% - 1.9em - var(--corner-overflow)),
+                var(--key-color-side) 150deg,
+                var(--key-color-front) 173deg);
+
 
         .bg-item {
             position: absolute;
-            height: 1.5em;
-            width: 1.5em;
+
+            height: calc(50% + 2 * var(--corner-overflow));
+            width: calc(50% + 2 * var(--corner-overflow));
         }
 
         .bg-left-top {
-            top: 0;
-            left: 0;
-            background: conic-gradient(from -90deg at 60% 30%, var(--key-color-back) 95deg, var(--key-color-side) 150deg);
+            top: var(--corner-overflow-neg);
+            left: var(--corner-overflow-neg);
+            background:var(--corner-bg-top);
             transform: scaleX(-1);
-
-
         }
 
         .bg-right-top {
-            top: 0;
-            right: 0;
-            background: conic-gradient(from -90deg at 60% 30%, var(--key-color-back) 95deg, var(--key-color-side) 150deg);
+            top: var(--corner-overflow-neg);
+            right: var(--corner-overflow-neg);
+            background: var(--corner-bg-top);
         }
 
         .bg-left-bottom {
-            bottom: 0;
-            left: 0;
-            height: 2em;
-            background: conic-gradient(at 60% 35%, var(--key-color-side) 150deg, var(--key-color-front) 180deg);
+            bottom: var(--corner-overflow-neg);
+            left: var(--corner-overflow-neg);
+            background: var(--corner-bg-bottom);
             transform: scaleX(-1);
-
         }
 
         .bg-right-bottom {
-            bottom: 0;
-            right: 0;
-            height: 2em;
-            background: conic-gradient(at 60% 35%, var(--key-color-side) 150deg, var(--key-color-front) 180deg);
+            right: var(--corner-overflow-neg);
+            bottom: var(--corner-overflow-neg);
+            background: var(--corner-bg-bottom);
         }
     }
 
@@ -161,11 +200,14 @@ body {
         height: var(--key-top-height);
         width: var(--key-top-width);
         background: radial-gradient(var(--key-color-top-prim), var(--key-color-top-sec));
-        border-radius: .3em;
+        border-radius: .4em;
         padding-inline: .2em;
 
         position: absolute;
         top: var(--key-top);
+
+        /*modern look*/
+        /*box-shadow: 0 .3em 10px #00000040;*/
 
         span {
             width: 100%;

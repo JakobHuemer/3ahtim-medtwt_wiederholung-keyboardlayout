@@ -1,3 +1,3 @@
 displayKeyboard(Keyboards.FULL_SIZED, Layouts.Workman)
 
-switchTheme(THEMES.CATPPUCCIN_MOCHA)
+switchTheme(THEMES.BOTH_SILVER)

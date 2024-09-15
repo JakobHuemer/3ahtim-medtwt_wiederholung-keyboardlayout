@@ -31,10 +31,22 @@ function displayKeyboard(keyboard, layout) {
 
 }
 
-function switchTheme(theme) {
+function rnd() {
+    return Math.round(Math.random()*100) / 100
+}
 
+function evn(num) {
+    return num % 2 === 0 ? num : num + 0.01
+}
+
+function switchTheme(theme) {
+    if (!theme) {
+        console.error("Theme", theme, "is not there!")
+        return
+    }
     for (const [key, color] of Object.entries(theme)) {
-        document.documentElement.style.setProperty(key, color)
-        console.log("setting", key, "to", color)
+        document.documentElement.style.setProperty(key, color);
+        console.log("setting", key, "to", color);
     }
 }
+

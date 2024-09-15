@@ -19,7 +19,8 @@ const Keyboards = {
         description: `
         <h2>Full-Sized Keyboard (100% Layout)</h2>
         <p>Standard keyboard with 104 keys, including number pad, home cluster, function keys, and arrow keys. 
-        Ideal for extensive data entry and office use. Number pad typically on the right, but some have it on the left.</p>
+            Ideal for extensive data entry and office use. Number pad typically on the right, but some have it on 
+            the left.</p>
     `,
         height: 6 + 5 * GAP_SIZE,
         width: 21.5 + 20 * GAP_SIZE + 1.25 * GAP_SIZE + 1,
