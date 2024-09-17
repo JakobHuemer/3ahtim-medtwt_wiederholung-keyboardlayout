@@ -3,10 +3,10 @@
  * @param keyboard KEYBOARD
  * @param layout {string}
  * @param keyData KEY_COLLECTION
+ * @param keyboardElement Element where the keyboard gets created on
  */
-function displayKeyboard(keyboard, layout, keyData) {
-
-    const keyboardElement = document.querySelector('#keyboard');
+function displayKeyboard(keyboard, layout, keyData, keyboardElement = document.createElement('div')) {
+    keyboardElement.classList.add('keyboard');
 
     // creating the actual keys by passing language data as keyData
     const keySet = craftKeySet(keyData);
@@ -16,14 +16,6 @@ function displayKeyboard(keyboard, layout, keyData) {
 
     // the 2d array of the kb layout with the crafted keys for their own language
     let kbLayout = keyboard.withLayout(craftedLayout);
-
-    let fontSize = parseInt(window.getComputedStyle(keyboardElement, null).fontSize);
-
-    // pixel * scopeFontSize = em
-    // pixel * scopeFontSize * KEY_SIZE = 4xem // is perfect key size ratio zu schrift
-
-    // keyboardElement.style.width = keyboard.width * KEY_SIZE * fontSize + 'px';
-    // keyboardElement.style.height = keyboard.height * KEY_SIZE * fontSize + 'px';
 
 
     let i = 0;
@@ -50,33 +42,39 @@ function displayKeyboard(keyboard, layout, keyData) {
     keyboardElement.setAttribute('data-size-height', keyboard.height);
 
 
-    resizeKeyboardAccordingToItsActualWidth();
+    resizeKeyboardAccordingToItsActualWidth(keyboardElement);
+
+    return keyboardElement;
 }
 
-function switchTheme(theme) {
+function switchTheme(theme, keyboardElement) {
     if (!theme) {
         console.error('Theme', theme, 'is not there!');
         return;
     }
     for (const [key, color] of Object.entries(theme)) {
-        document.documentElement.style.setProperty(key, color);
+        keyboardElement.style.setProperty(key, color);
         console.log('setting', key, 'to', color);
     }
 }
 
 
-function resizeKeyboardAccordingToItsActualWidth() {
-    // read computed width of keyboard e.g. 60rem and set aspect ratio of keyboard
-    let keyboardWidth = parseInt(window.getComputedStyle(keyboardElement, null).width);
+function resizeKeyboardAccordingToItsActualWidth(keyboardElement) {
+
+
+    let keyboardWidth = parseFloat(window.getComputedStyle(keyboardElement).width);
 
     // width in em with current font size
     let keyboardDataWidth = parseFloat(keyboardElement.getAttribute('data-size-width'));
     let keyboardDataHeight = parseFloat(keyboardElement.getAttribute('data-size-height'));
 
+    console.log(keyboardWidth, keyboardDataWidth, keyboardDataHeight);
     let newFontSize = keyboardWidth / (KEY_SIZE * keyboardDataWidth);
 
-    keyboardElement.style.fontSize = newFontSize + "px"
-    keyboardElement.style.height = newFontSize * KEY_SIZE * keyboardDataHeight + "px"
+    keyboardElement.style.fontSize = newFontSize + 'px';
+    keyboardElement.style.height = newFontSize * KEY_SIZE * keyboardDataHeight + 'px';
 
+    console.log(newFontSize);
 
 }
+

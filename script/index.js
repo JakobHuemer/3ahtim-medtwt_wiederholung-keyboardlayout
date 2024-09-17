@@ -1,12 +1,37 @@
-const keyboardElement = document.querySelector('#keyboard');
+const KEY_SIZE = parseInt(window.getComputedStyle(document.body).getPropertyValue('--key-root-size'));
 
-const KEY_SIZE = 4;
-
-document.documentElement.style.setProperty('--key-root-size', KEY_SIZE + 'em');
-
-
-displayKeyboard(KEYBOARD.FULL_SIZED, LAYOUT.QWERTY, KEY_DATA.GERMAN_KEYS);
+// DOM management code for general that runs all times
 
 window.addEventListener('resize', () => {
-    resizeKeyboardAccordingToItsActualWidth()
+    document.querySelectorAll('.keyboard').forEach(e => {
+        resizeKeyboardAccordingToItsActualWidth(e);
+    });
 });
+
+
+// resizes all keyboards if a new one added to the DOM
+(new MutationObserver((mutations, observer) => {
+    for (const mutation of mutations) {
+        if (mutation.type === 'childList') {
+            document.querySelectorAll('.keyboard').forEach(e => {
+                resizeKeyboardAccordingToItsActualWidth(e);
+            });
+        }
+    }
+
+})).observe(document.body, { attributes: true, childList: true, subtree: true });
+
+
+
+
+
+const kbElement = displayKeyboard(KEYBOARD.FULL_SIZED, LAYOUT.QWERTY, KEY_DATA.US_KEYS);
+document.body.appendChild(kbElement);
+
+const otherKbElement = displayKeyboard(KEYBOARD.SIXTY_PERCENT, LAYOUT.Dvorak, KEY_DATA.GERMAN_KEYS);
+otherKbElement.classList.add("something-else-keyboard")
+document.querySelector('main .some-content').appendChild(otherKbElement);
+
+switchTheme(THEMES.BOTH_FOREST_MIST, kbElement);
+
+

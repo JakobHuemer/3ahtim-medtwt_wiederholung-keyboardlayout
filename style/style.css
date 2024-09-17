@@ -6,14 +6,7 @@
 }
 
 :root {
-
-    --key-color-top-prim: #e8e8e8;
-    --key-color-top-sec: #d0d0d0;
-    --key-color-front: #c0c0c0;
-    --key-color-side: #a2a2a2;
-    --key-color-back: #919191;
-    --key-font-color: #00000;
-
+    --key-root-size: 4em;
     background: #202020;
 }
 
@@ -29,12 +22,28 @@ body {
     min-height: 100vh;
 }
 
+.keyboard {
+
+    /*will be removed later*/
+    width: min(90%, 70rem);
+}
+
+.something-else-keyboard {
+    width: 40rem;
+}
+
 
 /* US ANSI FULL SIZE */
-#keyboard {
+.keyboard {
 
-    width: min(90%, 70rem);
-    outline: 1px solid red;
+    /*default color*/
+    --key-color-top-prim: #e8e8e8;
+    --key-color-top-sec: #d0d0d0;
+    --key-color-front: #c0c0c0;
+    --key-color-side: #a2a2a2;
+    --key-color-back: #919191;
+    --key-font-color: #00000;
+    /*outline: 1px solid red;*/
 
     /* adding that variable in js .. probably bad */
     --key-size: var(--key-root-size);
