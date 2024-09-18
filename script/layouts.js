@@ -4,7 +4,7 @@
 //, the keyboard will take the keys it needs and the Layout provides the correct order of keys.
 
 const LAYOUT = {
-    QWERTY: "QWERTY",
+    Default: "Default",
     Dvorak: 'Dvorak',
     Colemak: 'Colemak',
     Workman: 'Workman'
@@ -21,7 +21,7 @@ function craftLayoutWithKeys(layout, keySet) {
     let K = keySet;
 
     const LAYOUT_LIST = {
-        QWERTY: {
+        Default: {
             keys: [
                 [K.ESC, K.F1, K.F2, K.F3, K.F4, K.F5, K.F6, K.F7, K.F8, K.F9, K.F10, K.F11, K.F12, K.PRINTSCREEN, K.SCROLLLOCK, K.PAUSE],
                 [K.TILDE, K.ONE, K.TWO, K.THREE, K.FOUR, K.FIVE, K.SIX, K.SEVEN, K.EIGHT, K.NINE, K.ZERO, K.MINUS, K.EQUALS, K.BACKSPACE, K.INSERT, K.HOME, K.PAGEUP, K.NUMLOCK, K.DIVIDE, K.MULTIPLY, K.SUBTRACT],

@@ -26,10 +26,10 @@ function displayKeyboard(keyboard, layout, keyData, keyboardElement = document.c
                 <div 
                     style="
                         position: absolute;
-                        top: calc(var(--key-size) * ${ keyLocDim.y }); 
-                        left: calc(var(--key-size) * ${ keyLocDim.x }); 
-                        width: calc(var(--key-size) * ${ keyLocDim.width }); 
-                        height: calc(var(--key-size) * ${ keyLocDim.height })" 
+                        top: calc(var(--key-size) * ${ keyLocDim.y } - var(--key-side-padding) / 2); 
+                        left: calc(var(--key-size) * ${ keyLocDim.x } - var(--key-side-padding) / 2); 
+                        width: calc(var(--key-size) * ${ keyLocDim.width } + var(--key-side-padding) / 2); 
+                        height: calc(var(--key-size) * ${ keyLocDim.height } + var(--key-side-padding) / 2)" 
                     class="keyslot"
                     data-keyid="${ key.id }"
                 >${ key.element.innerHTML }</div>`;

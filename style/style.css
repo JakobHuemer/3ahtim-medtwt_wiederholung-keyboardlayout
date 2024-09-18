@@ -7,6 +7,7 @@
 
 :root {
     --key-root-size: 4em;
+    --key-side-padding: .0em;
 
     /* Background Colors */
     --bg-base: #1e1e2e;
@@ -60,11 +61,14 @@ body {
 .keyboard {
 
     /*will be removed later*/
-    width: min(90%, 70rem);
+    width: 95%;
+
+
 }
 
-.something-else-keyboard {
-    width: 40rem;
+.keyslot {
+    background: pink;
+    border-radius: calc(var(--key-border-radius) + var(--key-side-padding) / 4);
 }
 
 
@@ -85,6 +89,8 @@ body {
     --key-gap: calc(var(--key-size) / 8);
     --key-half: calc(var(--key-size) / 2 - var(--key-gap) / 2);
 
+    --key-border-radius: .5em;
+
 
     font-family: "Ubuntu Mono", sans-serif;
     color: black;
@@ -95,13 +101,19 @@ body {
 
 .keyslot {
     overflow: hidden;
+
+    padding: calc(var(--key-side-padding) / 4);
 }
 
 
 
 .key {
+
+
+
     position: relative;
-    border-radius: .5em;
+
+    border-radius: var(--key-border-radius);
     overflow: hidden;
 
     color: var(--key-font-color);
@@ -118,8 +130,14 @@ body {
     --key-top-height: calc(100% - 1.7em);
     --key-top-width: calc(100% - 1.2em);
 
+
+
     /*modern look*/
     /*background: linear-gradient(var(--key-color-back) 5%, var(--key-color-side) 60%, var(--key-color-front));*/
+
+    &.pressed {
+        filter: brightness(.8);
+    }
 
     .bg {
         position: absolute;
@@ -192,7 +210,6 @@ body {
     .key-top {
         z-index: 10;
         display: flex;
-        flex-direction: column-reverse;
         justify-content: center;
         align-items: center;
 
@@ -205,8 +222,19 @@ body {
         position: absolute;
         top: var(--key-top);
 
-        span {
+        .key-top_main-column,
+        .key-top_extra-column{
+            flex: 1;
             width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            padding-block: .1em;
+
+            &.key-top_extra-column span {
+                height: 1em;
+            }
         }
     }
 }

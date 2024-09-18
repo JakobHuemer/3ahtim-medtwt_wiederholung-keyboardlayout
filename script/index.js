@@ -1,4 +1,5 @@
 const KEY_SIZE = parseInt(window.getComputedStyle(document.body).getPropertyValue('--key-root-size'));
+const KEY_SIDE_PADDING_EM = window.getComputedStyle(document.body).getPropertyValue('--key-side-padding');
 
 // DOM management code for general that runs all times
 
@@ -25,8 +26,10 @@ window.addEventListener('resize', () => {
 
 
 
-const kbElement = displayKeyboard(KEYBOARD.FULL_SIZED, LAYOUT.QWERTY, KEY_DATA.US_KEYS);
+const kbElement = displayKeyboard(KEYBOARD.FULL_SIZED, LAYOUT.Default, KEY_DATA.FRENCH_KEYS);
 document.body.appendChild(kbElement);
+
+switchTheme(THEMES.DEBUG, kbElement)
 
 // const otherKbElement = displayKeyboard(KEYBOARD.SIXTY_PERCENT, LAYOUT.Dvorak, KEY_DATA.GERMAN_KEYS);
 // otherKbElement.classList.add("something-else-keyboard")
