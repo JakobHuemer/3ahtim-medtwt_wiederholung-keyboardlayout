@@ -24,6 +24,7 @@ class Key {
 
     }
 
+
     enableKeycode() {
         this.showKeycode = true;
         this.render();
