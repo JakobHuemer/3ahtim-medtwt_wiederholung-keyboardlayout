@@ -20,8 +20,13 @@ The next selection is the starting arrangement/layout of the keys
 - Colemak
 - Workman
 
-All layouts are based on the ANSI US layout and keys although this may change if there is enough time for
-different language layouts as layouts need some amount of work to correctly import them into the code.
+Then you can select a Language. The current Languages are:
+
+ - US
+ - German
+
+Because of an Upgrade to the keys (the can now have 4 Symbols per key) more languages will finder
+their way into this list.
 
 #### Use custom Layout
 
@@ -37,8 +42,7 @@ vice verca.
 
 #### Custom Laynguage
 
-The language can also be selected to fit the users needs and change the bindings of the keys.
-For now only languages with a max of 2 visible bindings per key are allow and that might change.
+Languages can now contain up to 4 symbols per key, that should cover most languages.
 
 #### Homing key
 
