@@ -26,10 +26,10 @@ window.addEventListener('resize', () => {
 
 
 
-const kbElement = displayKeyboard(KEYBOARD.FULL_SIZED, LAYOUT.Default, KEY_DATA.FRENCH_KEYS);
+const kbElement = displayKeyboard(KEYBOARD.SEVENTY_FIVE_PERCENT, LAYOUT.Default, KEY_DATA.US_KEYS);
 document.body.appendChild(kbElement);
 
-switchTheme(THEMES.DEBUG, kbElement)
+switchTheme(THEMES.DARK_CATPPUCCIN_LIGHT, kbElement)
 
 // const otherKbElement = displayKeyboard(KEYBOARD.SIXTY_PERCENT, LAYOUT.Dvorak, KEY_DATA.GERMAN_KEYS);
 // otherKbElement.classList.add("something-else-keyboard")
