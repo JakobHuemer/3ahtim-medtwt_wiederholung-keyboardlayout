@@ -28,10 +28,9 @@ window.addEventListener('resize', () => {
 const kbElement = displayKeyboard(KEYBOARD.FULL_SIZED, LAYOUT.QWERTY, KEY_DATA.US_KEYS);
 document.body.appendChild(kbElement);
 
-const otherKbElement = displayKeyboard(KEYBOARD.SIXTY_PERCENT, LAYOUT.Dvorak, KEY_DATA.GERMAN_KEYS);
-otherKbElement.classList.add("something-else-keyboard")
-document.querySelector('main .some-content').appendChild(otherKbElement);
+// const otherKbElement = displayKeyboard(KEYBOARD.SIXTY_PERCENT, LAYOUT.Dvorak, KEY_DATA.GERMAN_KEYS);
+// otherKbElement.classList.add("something-else-keyboard")
+// document.querySelector('main .some-content').appendChild(otherKbElement);
 
-switchTheme(THEMES.BOTH_FOREST_MIST, kbElement);
 
 
