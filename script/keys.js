@@ -1,4 +1,3 @@
-
 class Key {
     constructor(keyCode, keyHint, [
         primary,
@@ -277,8 +276,26 @@ function craftKeySet(keyData) {
         ADD: new Key(KEYCODE.ADD, 'ADD', currentLayout.ADD),
         DECIMAL: new Key(KEYCODE.DECIMAL, 'DECIMAL', currentLayout.DECIMAL),
         NUMPADENTER: new Key(KEYCODE.NUMPADENTER, 'NUMPAD', currentLayout.NUMPADENTER).littleFont().enableKeycode(),
-
-        GENERIC_KEY: new Key(KEYCODE.GENERIC_KEY, 'NUMPAD', ['']),
     };
 
 }
+
+const GLOBAL_KEY = {
+    GENERIC_KEY: new Key(KEYCODE.GENERIC_KEY, 'NUMPAD', ['']),
+    GLOBE: new Key(KEYCODE.GENERIC, 'GLOBE', ['🌐', EMPTY, 'fn']),
+    FINGERPRINT: (() => {
+        let fingerPrintKey = new Key(KEYCODE.GENERIC, "FINGERPRINT", [EMPTY]);
+
+        let Kel = fingerPrintKey.element
+
+        const fpElement = document.createElement('div');
+        fpElement.classList.add('keys-custom_fingerprint-circle');
+        const keyTop = Kel.querySelector(".key-top")
+
+        keyTop.innerHTML = ""
+
+        keyTop.appendChild(fpElement)
+
+        return fingerPrintKey
+    })()
+};

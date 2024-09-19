@@ -44,8 +44,8 @@ function displayKeyboard(keyboard, layout, keyData, overwriteGlobalMapping = fal
                 <div
                     style="
                         position: absolute;
-                        top: calc(var(--key-size) * ${ keyLocDim.y } - var(--key-side-padding) / 2); 
-                        left: calc(var(--key-size) * ${ keyLocDim.x } - var(--key-side-padding) / 2); 
+                        top: calc(var(--key-size) * ${ keyLocDim.y } - var(--key-side-padding) / 4); 
+                        left: calc(var(--key-size) * ${ keyLocDim.x } - var(--key-side-padding) / 4); 
                         width: calc(var(--key-size) * ${ keyLocDim.width } + var(--key-side-padding) / 2); 
                         height: calc(var(--key-size) * ${ keyLocDim.height } + var(--key-side-padding) / 2)" 
                     class="keyslot"

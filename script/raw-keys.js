@@ -85,10 +85,10 @@ const US_KEYS = {
     SLASH: ['/', '?'],
 
     // Arrow Keys
-    UP: ['↑'],
-    DOWN: ['↓'],
-    LEFT: ['←'],
-    RIGHT: ['→'],
+    UP: ['▲'],
+    DOWN: ['▼'],
+    LEFT: ['◄'],
+    RIGHT: ['►'],
 
     // Navigation Cluster
     PRINTSCREEN: ['Print Screen'],
@@ -207,10 +207,10 @@ const GERMAN_KEYS = {
     SLASH: ['-', '_'],
 
     // Arrow Keys (unchanged)
-    UP: ['↑'],
-    DOWN: ['↓'],
-    LEFT: ['←'],
-    RIGHT: ['→'],
+    UP: ['▲'],
+    DOWN: ['▼'],
+    LEFT: ['◄'],
+    RIGHT: ['►'],
 
     // Navigation Cluster
     PRINTSCREEN: ['Druck'], // Changed to German
@@ -218,10 +218,10 @@ const GERMAN_KEYS = {
     PAUSE: ['Pause'], // Often the same in German
     INSERT: ['Einfg'], // Changed to German abbreviation
     HOME: ['Pos 1'], // Changed to German
-    PAGEUP: ['Bild ↑'], // Changed to German
+    PAGEUP: ['Bild ▲'], // Changed to German
     DELETE: ['Entf'], // Changed to German abbreviation
     END: ['Ende'], // Changed to German
-    PAGEDOWN: ['Bild ↓'], // Changed to German
+    PAGEDOWN: ['Bild ▼'], // Changed to German
 
     // Numpad (mostly unchanged, but added German labels where applicable)
     NUMLOCK: ['Num'], // Often abbreviated in German keyboards
@@ -331,10 +331,10 @@ const FRENCH_KEYS = {
     BACKSPACE: [EMPTY, EMPTY, EMPTY, 'Retour'],
 
     // Arrow Keys
-    UP: ['↑'],
-    DOWN: ['↓'],
-    LEFT: ['←'],
-    RIGHT: ['→'],
+    UP: ['▲'],
+    DOWN: ['▼'],
+    LEFT: ['◄'],
+    RIGHT: ['►'],
 
     // Navigation Cluster
     PRINTSCREEN: ['Impr écran'],
@@ -342,10 +342,10 @@ const FRENCH_KEYS = {
     PAUSE: ['Pause'],
     INSERT: ['Inser'],
     HOME: ['Début'],
-    PAGEUP: ['Page ↑'],
+    PAGEUP: ['Page ▲'],
     DELETE: ['Suppr'],
     END: ['Fin'],
-    PAGEDOWN: ['Page ↓'],
+    PAGEDOWN: ['Page ▼'],
 
     // Numpad
     NUMLOCK: ['Verr num'],
@@ -453,10 +453,10 @@ const JAPANESE_KEYS = {
     SLASH: ['/', '?', 'め', 'メ'],
 
     // Arrow Keys
-    UP: ['↑'],
-    DOWN: ['↓'],
-    LEFT: ['←'],
-    RIGHT: ['→'],
+    UP: ['▲'],
+    DOWN: ['▼'],
+    LEFT: ['◄'],
+    RIGHT: ['►'],
 
     // Navigation Cluster
     PRINTSCREEN: ['Print Screen'],
@@ -578,10 +578,10 @@ const UK_KEYS = {
     HASH: ['\\', '|'],
 
     // Arrow Keys
-    UP: ['↑'],
-    DOWN: ['↓'],
-    LEFT: ['←'],
-    RIGHT: ['→'],
+    UP: ['▲'],
+    DOWN: ['▼'],
+    LEFT: ['◄'],
+    RIGHT: ['►'],
 
     // Navigation Cluster
     PRINTSCREEN: ['PrtSc'],
@@ -615,7 +615,6 @@ const UK_KEYS = {
 
     GENERIC: [''], // placeholder key
 };
-
 
 const RUSSIAN_KEYS = {
     // Function Keys (unchanged)
@@ -701,10 +700,10 @@ const RUSSIAN_KEYS = {
     SLASH: ['.', ','],
 
     // Arrow Keys
-    UP: ['↑'],
-    DOWN: ['↓'],
-    LEFT: ['←'],
-    RIGHT: ['→'],
+    UP: ['▲'],
+    DOWN: ['▼'],
+    LEFT: ['◄'],
+    RIGHT: ['►'],
 
     // Navigation Cluster
     PRINTSCREEN: ['Print Screen'],

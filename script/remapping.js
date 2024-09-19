@@ -36,4 +36,10 @@ function onKey(e) {
 
 window.addEventListener('keydown', onKey);
 window.addEventListener('keyup', onKey);
-
+document.addEventListener('visibilitychange', e => {
+    if (document.visibilityState === 'hidden') {
+        document.querySelectorAll(`.key`).forEach(e => {
+            e.classList.remove('pressed');
+        });
+    }
+});

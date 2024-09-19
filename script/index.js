@@ -27,7 +27,7 @@ window.addEventListener('resize', () => {
 
 
 
-const kbElement = displayKeyboard(KEYBOARD.FULL_SIZED, LAYOUT.Default, KEY_DATA.RUSSIAN_KEYS, true);
+const kbElement = displayKeyboard(KEYBOARD.MACBOOK, LAYOUT.Default, KEY_DATA.US_KEYS, true);
 document.body.appendChild(kbElement);
 
 switchTheme(THEMES.CATPPUCCIN_MOCHA, kbElement);

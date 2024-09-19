@@ -847,4 +847,126 @@ const KEYBOARD = {
         ],
 
     },
+    MACBOOK: {
+        displayName: 'MacBook Pro M2 Pro',
+        description: `
+    <h2>MacBook Pro M2 Pro Keyboard</h2>
+    <p>Compact keyboard layout for the MacBook Pro M2 Pro. Features a 78-key layout with a touch bar, 
+       function keys that double as media controls, and a large trackpad below the keyboard.</p>
+    `,
+        height: 6 + 5 * GAP_SIZE,
+        width: 15 + 9.5 * GAP_SIZE,
+        withLayout: (lo) => {
+            const layout = lo.keys;
+            return [
+                [...(layout[0].slice(0, 13)), GLOBAL_KEY.FINGERPRINT],
+                [...layout[1].slice(0, 14)],
+                [...layout[2].slice(0, 14)],
+                [...layout[3].slice(0, 13)],
+                [...layout[4].slice(0, 12)],
+                [GLOBAL_KEY.GLOBE, layout[5][7], layout[5][2], layout[5][1], layout[5][3],
+                    layout[5][5], layout[5][4], layout[5][8], layout[4][12], layout[5][9], layout[5][10]]
+            ];
+        },
+        positions: [
+
+            // row 1
+            { x: 0, y: 0, width: 1.5 + 0.5 * GAP_SIZE, height: 1 },
+            { x: 1.5 + 1.5 * GAP_SIZE, y: 0, width: 1, height: 1 },
+            { x: 2.5 + 2.5 * GAP_SIZE, y: 0, width: 1, height: 1 },
+            { x: 3.5 + 3.5 * GAP_SIZE, y: 0, width: 1, height: 1 },
+            { x: 4.5 + 4.5 * GAP_SIZE, y: 0, width: 1, height: 1 },
+            { x: 5.5 + 5.5 * GAP_SIZE, y: 0, width: 1, height: 1 },
+            { x: 6.5 + 6.5 * GAP_SIZE, y: 0, width: 1, height: 1 },
+            { x: 7.5 + 7.5 * GAP_SIZE, y: 0, width: 1, height: 1 },
+            { x: 8.5 + 8.5 * GAP_SIZE, y: 0, width: 1, height: 1 },
+            { x: 9.5 + 9.5 * GAP_SIZE, y: 0, width: 1, height: 1 },
+            { x: 10.5 + 10.5 * GAP_SIZE, y: 0, width: 1, height: 1 },
+            { x: 11.5 + 11.5 * GAP_SIZE, y: 0, width: 1, height: 1 },
+            { x: 12.5 + 12.5 * GAP_SIZE, y: 0, width: 1, height: 1 },
+            { x: 13.5 + 13.5 * GAP_SIZE, y: 0, width: 1, height: 1 },
+
+
+            // row 2
+            { x: 0, y: 1 + GAP_SIZE, width: 1, height: 1 },
+            { x: 1 + GAP_SIZE, y: 1 + GAP_SIZE, width: 1, height: 1 },
+            { x: 2 + 2 * GAP_SIZE, y: 1 + GAP_SIZE, width: 1, height: 1 },
+            { x: 3 + 3 * GAP_SIZE, y: 1 + GAP_SIZE, width: 1, height: 1 },
+            { x: 4 + 4 * GAP_SIZE, y: 1 + GAP_SIZE, width: 1, height: 1 },
+            { x: 5 + 5 * GAP_SIZE, y: 1 + GAP_SIZE, width: 1, height: 1 },
+            { x: 6 + 6 * GAP_SIZE, y: 1 + GAP_SIZE, width: 1, height: 1 },
+            { x: 7 + 7 * GAP_SIZE, y: 1 + GAP_SIZE, width: 1, height: 1 },
+            { x: 8 + 8 * GAP_SIZE, y: 1 + GAP_SIZE, width: 1, height: 1 },
+            { x: 9 + 9 * GAP_SIZE, y: 1 + GAP_SIZE, width: 1, height: 1 },
+            { x: 10 + 10 * GAP_SIZE, y: 1 + GAP_SIZE, width: 1, height: 1 },
+            { x: 11 + 11 * GAP_SIZE, y: 1 + GAP_SIZE, width: 1, height: 1 },
+            { x: 12 + 12 * GAP_SIZE, y: 1 + GAP_SIZE, width: 1, height: 1 },
+            { x: 13 + 13 * GAP_SIZE, y: 1 + GAP_SIZE, width: 1.5 + 0.5 * GAP_SIZE, height: 1 },
+
+
+            // row 3
+            { x: 0, y: 2 + 2 * GAP_SIZE, width: 1.5 + 0.5 * GAP_SIZE, height: 1 },
+            { x: 1.5 + 1.5 * GAP_SIZE, y: 2 + 2 * GAP_SIZE, width: 1, height: 1 },
+            { x: 2.5 + 2.5 * GAP_SIZE, y: 2 + 2 * GAP_SIZE, width: 1, height: 1 },
+            { x: 3.5 + 3.5 * GAP_SIZE, y: 2 + 2 * GAP_SIZE, width: 1, height: 1 },
+            { x: 4.5 + 4.5 * GAP_SIZE, y: 2 + 2 * GAP_SIZE, width: 1, height: 1 },
+            { x: 5.5 + 5.5 * GAP_SIZE, y: 2 + 2 * GAP_SIZE, width: 1, height: 1 },
+            { x: 6.5 + 6.5 * GAP_SIZE, y: 2 + 2 * GAP_SIZE, width: 1, height: 1 },
+            { x: 7.5 + 7.5 * GAP_SIZE, y: 2 + 2 * GAP_SIZE, width: 1, height: 1 },
+            { x: 8.5 + 8.5 * GAP_SIZE, y: 2 + 2 * GAP_SIZE, width: 1, height: 1 },
+            { x: 9.5 + 9.5 * GAP_SIZE, y: 2 + 2 * GAP_SIZE, width: 1, height: 1 },
+            { x: 10.5 + 10.5 * GAP_SIZE, y: 2 + 2 * GAP_SIZE, width: 1, height: 1 },
+            { x: 11.5 + 11.5 * GAP_SIZE, y: 2 + 2 * GAP_SIZE, width: 1, height: 1 },
+            { x: 12.5 + 12.5 * GAP_SIZE, y: 2 + 2 * GAP_SIZE, width: 1, height: 1 },
+            { x: 13.5 + 13.5 * GAP_SIZE, y: 2 + 2 * GAP_SIZE, width: 1, height: 1 },
+
+
+            // row 4
+            { x: 0, y: 3 + 3 * GAP_SIZE, width: 1.75 + GAP_SIZE, height: 1 },
+            { x: 1.75 + 2 * GAP_SIZE, y: 3 + 3 * GAP_SIZE, width: 1, height: 1 },
+            { x: 2.75 + GAP_SIZE + 2 * GAP_SIZE, y: 3 + 3 * GAP_SIZE, width: 1, height: 1 },
+            { x: 3.75 + GAP_SIZE + 3 * GAP_SIZE, y: 3 + 3 * GAP_SIZE, width: 1, height: 1 },
+            { x: 4.75 + GAP_SIZE + 4 * GAP_SIZE, y: 3 + 3 * GAP_SIZE, width: 1, height: 1 },
+            { x: 5.75 + GAP_SIZE + 5 * GAP_SIZE, y: 3 + 3 * GAP_SIZE, width: 1, height: 1 },
+            { x: 6.75 + GAP_SIZE + 6 * GAP_SIZE, y: 3 + 3 * GAP_SIZE, width: 1, height: 1 },
+            { x: 7.75 + GAP_SIZE + 7 * GAP_SIZE, y: 3 + 3 * GAP_SIZE, width: 1, height: 1 },
+            { x: 8.75 + GAP_SIZE + 8 * GAP_SIZE, y: 3 + 3 * GAP_SIZE, width: 1, height: 1 },
+            { x: 9.75 + GAP_SIZE + 9 * GAP_SIZE, y: 3 + 3 * GAP_SIZE, width: 1, height: 1 },
+            { x: 10.75 + GAP_SIZE + 10 * GAP_SIZE, y: 3 + 3 * GAP_SIZE, width: 1, height: 1 },
+            { x: 11.75 + GAP_SIZE + 11 * GAP_SIZE, y: 3 + 3 * GAP_SIZE, width: 1, height: 1 },
+            { x: 12.75 + GAP_SIZE + 12 * GAP_SIZE, y: 3 + 3 * GAP_SIZE, width: 1.5 + 2.5 * GAP_SIZE, height: 1 },
+
+
+            // row 5
+            { x: 0, y: 4 + 4 * GAP_SIZE, width: 2.25 + 2 * GAP_SIZE, height: 1 },
+            { x: 2.25 + GAP_SIZE + 2 * GAP_SIZE, y: 4 + 4 * GAP_SIZE, width: 1, height: 1 },
+            { x: 3.25 + GAP_SIZE + 3 * GAP_SIZE, y: 4 + 4 * GAP_SIZE, width: 1, height: 1 },
+            { x: 4.25 + GAP_SIZE + 4 * GAP_SIZE, y: 4 + 4 * GAP_SIZE, width: 1, height: 1 },
+            { x: 5.25 + GAP_SIZE + 5 * GAP_SIZE, y: 4 + 4 * GAP_SIZE, width: 1, height: 1 },
+            { x: 6.25 + GAP_SIZE + 6 * GAP_SIZE, y: 4 + 4 * GAP_SIZE, width: 1, height: 1 },
+            { x: 7.25 + GAP_SIZE + 7 * GAP_SIZE, y: 4 + 4 * GAP_SIZE, width: 1, height: 1 },
+            { x: 8.25 + GAP_SIZE + 8 * GAP_SIZE, y: 4 + 4 * GAP_SIZE, width: 1, height: 1 },
+            { x: 9.25 + GAP_SIZE + 9 * GAP_SIZE, y: 4 + 4 * GAP_SIZE, width: 1, height: 1 },
+            { x: 10.25 + GAP_SIZE + 10 * GAP_SIZE, y: 4 + 4 * GAP_SIZE, width: 1, height: 1 },
+            { x: 11.25 + GAP_SIZE + 11 * GAP_SIZE, y: 4 + 4 * GAP_SIZE, width: 1, height: 1 },
+            { x: 12.25 + GAP_SIZE + 12 * GAP_SIZE, y: 4 + 4 * GAP_SIZE, width: 2 + 2.5 * GAP_SIZE, height: 1 }, // Shift
+
+
+            // row 6
+
+            // Row 6 (Space bar row)
+            { x: 0, y: 5 + 5 * GAP_SIZE, width: 1, height: 1 },
+            { x: 1 + GAP_SIZE, y: 5 + 5 * GAP_SIZE, width: 1, height: 1 },
+            { x: 2 + 2 * GAP_SIZE, y: 5 + 5 * GAP_SIZE, width: 1, height: 1 },
+            { x: 3 + 3 * GAP_SIZE, y: 5 + 5 * GAP_SIZE, width: 1 + 3 * GAP_SIZE, height: 1 }, // Command
+            { x: 4 + 7 * GAP_SIZE, y: 5 + 5 * GAP_SIZE, width: 5.5, height: 1 }, // Space
+            { x: 9.5 + 8 * GAP_SIZE, y: 5 + 5 * GAP_SIZE, width: 1 + 1.5 * GAP_SIZE, height: 1 },
+            { x: 10.5 + 10.5 * GAP_SIZE, y: 5 + 5 * GAP_SIZE, width: 1, height: 1 },
+            { x: 11.5 + 11.5 * GAP_SIZE, y: 5 + 5 * GAP_SIZE, width: 1, height: 1 },
+            { x: 12.5 + 12.5 * GAP_SIZE, y: 5 + 5 * GAP_SIZE, width: 1, height: .5 - GAP_SIZE / 4 },
+            { x: 12.5 + 12.5 * GAP_SIZE, y: 5.5 + 5.25 * GAP_SIZE, width: 1, height: .5 - GAP_SIZE / 4 },
+            { x: 13.5 + 13.5 * GAP_SIZE, y: 5 + 5 * GAP_SIZE, width: 1, height: 1 },
+        ],
+
+    },
 };

@@ -91,7 +91,7 @@ body {
         top: calc(var(--key-side-padding) / 4);
         left: calc(var(--key-side-padding) / 4);
         /*background: rgba(128, 0, 0, .3);*/
-        border: 1px solid rgba(0,0,0,.4);
+        border: 1px solid rgba(0, 0, 0, .4);
         overflow: hidden;
         filter: blur(2.5px);
         border-radius: var(--key-border-radius);
@@ -109,7 +109,7 @@ body {
     --key-color-side: #a2a2a2;
     --key-color-back: #919191;
     --key-font-color: #00000;
-    /*outline: 1px solid red;*/
+    outline: 1px solid red;
 
     /* adding that variable in js .. probably bad */
     --key-size: var(--key-root-size);
@@ -149,7 +149,6 @@ body {
     --key-top: .3em;
     --key-top-height: calc(100% - 1.7em);
     --key-top-width: calc(100% - 1.2em);
-
 
 
     /*modern look*/
@@ -252,7 +251,7 @@ body {
         top: var(--key-top);
 
         .key-top_main-column,
-        .key-top_extra-column{
+        .key-top_extra-column {
             flex: 1;
             width: 100%;
             height: 100%;
@@ -264,6 +263,19 @@ body {
             &.key-top_extra-column span {
                 height: 50%;
             }
+        }
+
+
+        .keys-custom_fingerprint-circle {
+            position: absolute;
+            height: 75%;
+            aspect-ratio: 1;
+            background: rgba(0, 0, 0, .1);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 100%;
+
         }
     }
 }
