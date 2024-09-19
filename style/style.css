@@ -7,7 +7,7 @@
 
 :root {
     --key-root-size: 4em;
-    --key-side-padding: .0em;
+    --key-side-padding: .5em;
 
     /* Background Colors */
     --bg-base: #1e1e2e;
@@ -58,17 +58,44 @@ body {
     /*background: var(--bg-base);*/
 }
 
-.keyboard {
-
-    /*will be removed later*/
-    width: 95%;
-
-
-}
 
 .keyslot {
-    background: pink;
     border-radius: calc(var(--key-border-radius) + var(--key-side-padding) / 4);
+    padding: calc(var(--key-side-padding) / 4);
+
+    /* slot for the key to fit in */
+
+    &::after {
+        z-index: -2;
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: calc(var(--key-side-padding) / 8);
+        left: 0;
+        background: color-mix(in lch, var(--key-color-side), #111111);
+        border-radius: inherit;
+    }
+
+    /* ambient shadow between existing keys */
+
+    &:has(.key)::before {
+
+        --shadow-amount: .3em;
+
+        z-index: 10;
+        content: '';
+        position: absolute;
+        height: calc(100% - var(--key-side-padding) / 2);
+        width: calc(100% - var(--key-side-padding) / 2);
+        top: calc(var(--key-side-padding) / 4);
+        left: calc(var(--key-side-padding) / 4);
+        /*background: rgba(128, 0, 0, .3);*/
+        border: 1px solid rgba(0,0,0,.4);
+        overflow: hidden;
+        filter: blur(2.5px);
+        border-radius: var(--key-border-radius);
+    }
 }
 
 
@@ -95,20 +122,13 @@ body {
     font-family: "Ubuntu Mono", sans-serif;
     color: black;
     font-weight: 700;
+    width: 95%;
 
     position: relative;
 }
 
-.keyslot {
-    overflow: hidden;
-
-    padding: calc(var(--key-side-padding) / 4);
-}
-
-
 
 .key {
-
 
 
     position: relative;
@@ -134,9 +154,12 @@ body {
 
     /*modern look*/
     /*background: linear-gradient(var(--key-color-back) 5%, var(--key-color-side) 60%, var(--key-color-front));*/
+    transition: transform .05s linear, filter .05s linear;
 
     &.pressed {
         filter: brightness(.8);
+        transform: translateY(4%) scale(99%);
+
     }
 
     .bg {
@@ -198,13 +221,17 @@ body {
         }
     }
 
+
     .keycode {
         z-index: 10;
         position: absolute;
+        display: block;
         left: 0;
         bottom: .5%;
         font-weight: 500;
         width: 100%;
+        transform: skew(-10deg);
+
     }
 
     .key-top {
@@ -219,7 +246,7 @@ body {
         border-radius: .4em;
         padding-inline: .2em;
 
-        box-shadow: 0 2px 10px -5px rgba(0, 0, 0, .3);
+        box-shadow: 0 1px 10px -3px rgba(0, 0, 0, .2);
 
         position: absolute;
         top: var(--key-top);

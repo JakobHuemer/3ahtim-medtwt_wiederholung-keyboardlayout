@@ -13,19 +13,17 @@ class Key {
         this.extraBottom = extraBottom;
         this.keyHint = keyHint;
 
-        this.showKeycode = false;
+        this.showKeyHint = false;
         this.isLittleFont = false;
 
         this.element = document.createElement('div');
 
         this.render();
-        this.keyElement.id = 'key-' + this.id;
-
     }
 
 
     enableKeycode() {
-        this.showKeycode = true;
+        this.showKeyHint = true;
         this.render();
         return this;
     }
@@ -50,8 +48,6 @@ class Key {
 
         keyTopHtml += `<span class="key-top_main-column-primary">${ this.primary }</span>
             </div>`;
-
-        console.log(this.extraBottom);
 
         if (this.extraBottom || this.extraTop) {
             keyTopHtml += `
@@ -84,8 +80,8 @@ class Key {
                       ${ keyTopHtml }
                 </div>
                    
-                ${ this.showKeycode ?
-            `<span class="keycode" style="font-size: .9em">${ this.keyHint }</span>` : '' }
+                ${ this.showKeyHint ?
+            `<div class="keycode" style="font-size: .9em">${ this.keyHint }</div>` : '' }
                     </div>
                         
         `.replace(/(?<=>)\s*/g, ''); // remove every whitespace between spans
@@ -104,39 +100,44 @@ class Key {
 
 const KEYCODE = {
     // Function Keys
-    F1: 112, F2: 113, F3: 114, F4: 115, F5: 116,
-    F6: 117, F7: 118, F8: 119, F9: 120, F10: 121,
-    F11: 122, F12: 123,
+    F1: 'F1', F2: 'F2', F3: 'F3', F4: 'F4', F5: 'F5',
+    F6: 'F6', F7: 'F7', F8: 'F8', F9: 'F9', F10: 'F10',
+    F11: 'F11', F12: 'F12',
 
     // Number Keys
-    ONE: 49, TWO: 50, THREE: 51, FOUR: 52, FIVE: 53, SIX: 54,
-    SEVEN: 55, EIGHT: 56, NINE: 57, ZERO: 48,
+    ONE: 'Digit1', TWO: 'Digit2', THREE: 'Digit3', FOUR: 'Digit4', FIVE: 'Digit5', SIX: 'Digit6',
+    SEVEN: 'Digit7', EIGHT: 'Digit8', NINE: 'Digit9', ZERO: 'Digit0',
 
     // Alphabet Keys
-    A: 65, B: 66, C: 67, D: 68, E: 69, F: 70, G: 71, H: 72, I: 73, J: 74, K: 75, L: 76,
-    M: 77, N: 78, O: 79, P: 80, Q: 81, R: 82, S: 83, T: 84, U: 85, V: 86, W: 87, X: 88,
-    Y: 89, Z: 90,
+    A: 'KeyA', B: 'KeyB', C: 'KeyC', D: 'KeyD', E: 'KeyE', F: 'KeyF', G: 'KeyG', H: 'KeyH',
+    I: 'KeyI', J: 'KeyJ', K: 'KeyK', L: 'KeyL', M: 'KeyM', N: 'KeyN', O: 'KeyO', P: 'KeyP',
+    Q: 'KeyQ', R: 'KeyR', S: 'KeyS', T: 'KeyT', U: 'KeyU', V: 'KeyV', W: 'KeyW', X: 'KeyX',
+    Y: 'KeyY', Z: 'KeyZ',
 
     // Special Keys
-    ESC: 27, TAB: 9, CAPITAL: 20, LSHIFT: 16, RSHIFT: 16, LCONTROL: 17, RCONTROL: 17, LALT: 18,
-    RALT: 18, LWIN: 91, RWIN: 92, MENU: 93, SPACE: 32, ENTER: 13, BACKSPACE: 8, TILDE: 192,
-    MINUS: 189, EQUALS: 187, LBRACKET: 219, RBRACKET: 221, BACKSLASH: 220, SEMICOLON: 186,
-    APOSTROPHE: 222, COMMA: 188, PERIOD: 190, SLASH: 191,
+    ESC: 'Escape', TAB: 'Tab', CAPITAL: 'CapsLock', LSHIFT: 'ShiftLeft', RSHIFT: 'ShiftRight',
+    LCONTROL: 'ControlLeft', RCONTROL: 'ControlRight', LALT: 'AltLeft', RALT: 'AltRight',
+    LWIN: 'MetaLeft', RWIN: 'MetaRight', MENU: 'ContextMenu', SPACE: 'Space', ENTER: 'Enter',
+    BACKSPACE: 'Backspace', TILDE: 'Backquote', MINUS: 'Minus', EQUALS: 'Equal',
+    LBRACKET: 'BracketLeft', RBRACKET: 'BracketRight', BACKSLASH: 'Backslash',
+    SEMICOLON: 'Semicolon', APOSTROPHE: 'Quote', COMMA: 'Comma', PERIOD: 'Period', SLASH: 'Slash',
 
     // Arrow Keys
-    UP: 38, DOWN: 40, LEFT: 37, RIGHT: 39,
+    UP: 'ArrowUp', DOWN: 'ArrowDown', LEFT: 'ArrowLeft', RIGHT: 'ArrowRight',
 
     // Navigation Cluster
-    PRINTSCREEN: 44, SCROLLLOCK: 145, PAUSE: 19, INSERT: 45, HOME: 36, PAGEUP: 33,
-    DELETE: 46, END: 35, PAGEDOWN: 34,
+    PRINTSCREEN: 'PrintScreen', SCROLLLOCK: 'ScrollLock', PAUSE: 'Pause', INSERT: 'Insert',
+    HOME: 'Home', PAGEUP: 'PageUp', DELETE: 'Delete', END: 'End', PAGEDOWN: 'PageDown',
 
     // Numpad
-    NUMLOCK: 144, NUMPAD0: 96, NUMPAD1: 97, NUMPAD2: 98, NUMPAD3: 99, NUMPAD4: 100,
-    NUMPAD5: 101, NUMPAD6: 102, NUMPAD7: 103, NUMPAD8: 104, NUMPAD9: 105, DIVIDE: 111,
-    MULTIPLY: 106, SUBTRACT: 109, ADD: 107, DECIMAL: 110, NUMPADENTER: 13,
+    NUMLOCK: 'NumLock', NUMPAD0: 'Numpad0', NUMPAD1: 'Numpad1', NUMPAD2: 'Numpad2',
+    NUMPAD3: 'Numpad3', NUMPAD4: 'Numpad4', NUMPAD5: 'Numpad5', NUMPAD6: 'Numpad6',
+    NUMPAD7: 'Numpad7', NUMPAD8: 'Numpad8', NUMPAD9: 'Numpad9', DIVIDE: 'NumpadDivide',
+    MULTIPLY: 'NumpadMultiply', SUBTRACT: 'NumpadSubtract', ADD: 'NumpadAdd',
+    DECIMAL: 'NumpadDecimal', NUMPADENTER: 'NumpadEnter',
 
     // Placeholder key
-    GENERIC: -1,
+    GENERIC: 'Unidentified',
 };
 
 

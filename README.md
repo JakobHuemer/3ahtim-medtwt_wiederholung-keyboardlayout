@@ -67,3 +67,17 @@ The drag and drop only happens at the html and will not be synced on the js.
 
 When exporting, the html will the scanned using the IDs of the key elements and empty
 slots will have a placeholder.
+
+
+# Keyboard live preview
+
+The user can type on their keyboard and test their layout.
+
+for that they have to put in their host input type e.g. US
+
+## How?
+
+In the keyboard the keyslots will never move and so they will hold the host keycode at that place.
+
+When a key is pressed, preventDefault is called and the keyslot with that keycode get pulled. The keycode of the key
+the keyslot holds will fire globally on the site.

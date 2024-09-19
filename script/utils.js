@@ -1,29 +1,47 @@
 /**
  *
  * @param keyboard KEYBOARD
- * @param layout {string}
+ * @param layout { string }
  * @param keyData KEY_COLLECTION
- * @param keyboardElement Element where the keyboard gets created on
+ * @param overwriteGlobalMapping { boolean } If the keyboard is the global representation of key input
+ * @param keyboardElement { HTMLDivElement } Element where the keyboard gets created on
  */
-function displayKeyboard(keyboard, layout, keyData, keyboardElement = document.createElement('div')) {
+function displayKeyboard(keyboard, layout, keyData, overwriteGlobalMapping = false, keyboardElement = document.createElement('div')) {
     keyboardElement.classList.add('keyboard');
 
     // creating the actual keys by passing language data as keyData
+    // key bindings for the codes
     const keySet = craftKeySet(keyData);
 
     // changing order of the keys for a specific layout
+    // transform order of the keys
     const craftedLayout = craftLayoutWithKeys(layout, keySet);
+    const hostLayout = craftLayoutWithKeys(LAYOUT.Default, keySet);
 
     // the 2d array of the kb layout with the crafted keys for their own language
+    // put the keys on a 2d layout
     let kbLayout = keyboard.withLayout(craftedLayout);
+    let hostKbLayout = keyboard.withLayout(hostLayout);
+    // also generate keyboard with default layout
 
+    let keyCounter = 0;
 
-    let i = 0;
-    for (const row of kbLayout) {
-        for (const key of row) {
-            const keyLocDim = keyboard.positions[i];
+    if (overwriteGlobalMapping) {
+        MAPPING_TABLE = {};
+    }
+
+    for (let i = 0; i < kbLayout.length; i++) {
+        let row = kbLayout[i];
+        let hostRow = hostKbLayout[i];
+        for (let j = 0; j < row.length; j++) {
+            const keyLocDim = keyboard.positions[keyCounter];
+            const virtualKey = row[j];
+            const hostKey = hostRow[j];
+            if (overwriteGlobalMapping) {
+                MAPPING_TABLE[hostKey.keyCode] = virtualKey.keyCode
+            }
             keyboardElement.innerHTML += `
-                <div 
+                <div
                     style="
                         position: absolute;
                         top: calc(var(--key-size) * ${ keyLocDim.y } - var(--key-side-padding) / 2); 
@@ -31,11 +49,14 @@ function displayKeyboard(keyboard, layout, keyData, keyboardElement = document.c
                         width: calc(var(--key-size) * ${ keyLocDim.width } + var(--key-side-padding) / 2); 
                         height: calc(var(--key-size) * ${ keyLocDim.height } + var(--key-side-padding) / 2)" 
                     class="keyslot"
-                    data-keyid="${ key.id }"
-                >${ key.element.innerHTML }</div>`;
-            i++;
+                    data-keycode="${ hostKey.keyCode }"
+                >${ virtualKey.element.innerHTML }</div>`;
+            keyCounter++;
         }
     }
+
+    console.log(MAPPING_TABLE)
+
 
     // size * 4 + "em"
     keyboardElement.setAttribute('data-size-width', keyboard.width);
