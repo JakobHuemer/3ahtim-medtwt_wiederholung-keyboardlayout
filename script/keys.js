@@ -139,16 +139,33 @@ const KEYCODE = {
     GENERIC: 'Unidentified',
 };
 
+const availableKeyData = {};
 
 // public
-const KEY_DATA = {
-    US_KEYS,
-    UK_KEYS,
-    GERMAN_KEYS,
-    RUSSIAN_KEYS,
-    FRENCH_KEYS,
-    JAPANESE_KEYS,
-};
+// select which key bindings to use.
+const KEY_DATA = [
+    {
+        keys: US_KEYS,
+        layouts: [
+            LAYOUT.Dvorak,
+            LAYOUT.Workman,
+            LAYOUT.Colemak,
+        ],
+    },
+    {
+        keys: GERMAN_KEYS,
+        layouts: [
+            LAYOUT.Neo,
+            LAYOUT.BEPO
+        ],
+    },
+    {
+        keys: FRENCH_KEYS,
+    },
+    {
+        keys: JAPANESE_KEYS,
+    },
+];
 
 /**
  *
@@ -284,18 +301,18 @@ const GLOBAL_KEY = {
     GENERIC_KEY: new Key(KEYCODE.GENERIC_KEY, 'NUMPAD', ['']),
     GLOBE: new Key(KEYCODE.GENERIC, 'GLOBE', ['🌐', EMPTY, 'fn']),
     FINGERPRINT: (() => {
-        let fingerPrintKey = new Key(KEYCODE.GENERIC, "FINGERPRINT", [EMPTY]);
+        let fingerPrintKey = new Key(KEYCODE.GENERIC, 'FINGERPRINT', [EMPTY]);
 
-        let Kel = fingerPrintKey.element
+        let Kel = fingerPrintKey.element;
 
         const fpElement = document.createElement('div');
         fpElement.classList.add('keys-custom_fingerprint-circle');
-        const keyTop = Kel.querySelector(".key-top")
+        const keyTop = Kel.querySelector('.key-top');
 
-        keyTop.innerHTML = ""
+        keyTop.innerHTML = '';
 
-        keyTop.appendChild(fpElement)
+        keyTop.appendChild(fpElement);
 
-        return fingerPrintKey
-    })()
+        return fingerPrintKey;
+    })(),
 };

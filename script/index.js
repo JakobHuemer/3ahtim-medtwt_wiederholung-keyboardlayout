@@ -26,14 +26,12 @@ window.addEventListener('resize', () => {
 
 
 
-
-const kbElement = displayKeyboard(KEYBOARD.MACBOOK, LAYOUT.Default, KEY_DATA.US_KEYS, true);
+// select a keyboard to give a form
+// select a language (keyset) for the binding of the keys -> keys.js (KEY_DATA)
+// select an order in which the keys are used in this language -> layouts.json (LAYOUT)
+const kbElement = displayKeyboard(KEYBOARD.MACBOOK, KEY_DATA[1].layouts[0], KEY_DATA[1].keys, true);
 document.body.appendChild(kbElement);
 
 switchTheme(THEMES.CATPPUCCIN_MOCHA, kbElement);
-
-// const otherKbElement = displayKeyboard(KEYBOARD.SIXTY_PERCENT, LAYOUT.Dvorak, KEY_DATA.GERMAN_KEYS);
-// otherKbElement.classList.add("something-else-keyboard")
-// document.querySelector('main .some-content').appendChild(otherKbElement);
 
 

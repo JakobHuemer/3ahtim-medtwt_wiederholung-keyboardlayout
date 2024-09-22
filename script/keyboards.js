@@ -24,9 +24,7 @@ const KEYBOARD = {
     `,
         height: 6 + 5 * GAP_SIZE,
         width: 21.5 + 20 * GAP_SIZE + 1.25 * GAP_SIZE + 1,
-        withLayout: (layout) => {
-            return layout.keys;
-        },
+        withLayout: (layout) => layout,
         positions: [
 
             // row 1
@@ -162,8 +160,7 @@ const KEYBOARD = {
     `,
         width: 19 + 18 * GAP_SIZE,
         height: 6 + 5 * GAP_SIZE,
-        withLayout: (lo) => {
-            const layout = lo.keys;
+        withLayout: (layout) => {
             return [
                 [...layout[0].slice(0, 14), layout[2][14], layout[1][15], layout[2][15], layout[1][16], layout[2][16]],
                 layout[1].unslice(14, 17),
@@ -305,9 +302,7 @@ const KEYBOARD = {
     `,
         width: 17.25 + 16 * GAP_SIZE + GAP_SIZE + 1,
         height: 6 + 5 * GAP_SIZE,
-        withLayout: (lo) => {
-            const layout = lo.keys;
-
+        withLayout: (layout) => {
             return [
                 layout[0].slice(0, 13),
                 layout[1].slice(0, 17),
@@ -432,8 +427,7 @@ const KEYBOARD = {
     `,
         width: 16 + 15 * GAP_SIZE,
         height: 6 + 5 * GAP_SIZE,
-        withLayout: (lo) => {
-            const layout = lo.keys;
+        withLayout: (layout) => {
             return [
                 [...(layout[0].slice(0, 14)), layout[0][15], layout[2][14]],
                 [...layout[1].slice(0, 14), layout[1][15]],
@@ -560,8 +554,7 @@ const KEYBOARD = {
     `,
         width: 16 + 15 * GAP_SIZE,
         height: 5 + 4 * GAP_SIZE,
-        withLayout: (lo) => {
-            const layout = lo.keys;
+        withLayout: (layout) => {
             return [
                 [...layout[1].slice(0, 14), layout[2][14]],
                 [...layout[2].slice(0, 14), layout[1][15]],
@@ -669,9 +662,7 @@ const KEYBOARD = {
 
         width: 15 + 14 * GAP_SIZE,
         height: 5 + 4 * GAP_SIZE,
-        withLayout: (lo) => {
-            const layout = lo.keys;
-            console.log(layout);
+        withLayout: (layout) => {
             return [
                 layout[1].slice(0, 14),
                 layout[2].slice(0, 14),
@@ -773,8 +764,7 @@ const KEYBOARD = {
     `,
         width: 14 + 12 * GAP_SIZE,
         height: 4 + 3 * GAP_SIZE,
-        withLayout: (lo) => {
-            const layout = lo.keys;
+        withLayout: (layout) => {
             return [
                 [layout[0][0], ...layout[2].slice(1, 11), layout[1][13], layout[2][14]],
                 [layout[2][0], ...layout[3].slice(1, 10), layout[3][12], layout[1][16]],
@@ -856,8 +846,7 @@ const KEYBOARD = {
     `,
         height: 6 + 5 * GAP_SIZE,
         width: 15 + 9.5 * GAP_SIZE,
-        withLayout: (lo) => {
-            const layout = lo.keys;
+        withLayout: (layout) => {
             return [
                 [...(layout[0].slice(0, 13)), GLOBAL_KEY.FINGERPRINT],
                 [...layout[1].slice(0, 14)],
@@ -865,7 +854,7 @@ const KEYBOARD = {
                 [...layout[3].slice(0, 13)],
                 [...layout[4].slice(0, 12)],
                 [GLOBAL_KEY.GLOBE, layout[5][7], layout[5][2], layout[5][1], layout[5][3],
-                    layout[5][5], layout[5][4], layout[5][8], layout[4][12], layout[5][9], layout[5][10]]
+                    layout[5][5], layout[5][4], layout[5][8], layout[4][12], layout[5][9], layout[5][10]],
             ];
         },
         positions: [

@@ -1,7 +1,7 @@
 /**
  *
  * @param keyboard KEYBOARD
- * @param layout { string }
+ * @param layout LAYOUT
  * @param keyData KEY_COLLECTION
  * @param overwriteGlobalMapping { boolean } If the keyboard is the global representation of key input
  * @param keyboardElement { HTMLDivElement } Element where the keyboard gets created on
@@ -15,8 +15,10 @@ function displayKeyboard(keyboard, layout, keyData, overwriteGlobalMapping = fal
 
     // changing order of the keys for a specific layout
     // transform order of the keys
-    const craftedLayout = craftLayoutWithKeys(layout, keySet);
-    const hostLayout = craftLayoutWithKeys(LAYOUT.Default, keySet);
+    const craftedLayout = layout.withKeys(keySet);
+    const hostLayout = LAYOUT.Default.withKeys(keySet);
+
+    console.log(craftedLayout)
 
     // the 2d array of the kb layout with the crafted keys for their own language
     // put the keys on a 2d layout
@@ -37,6 +39,11 @@ function displayKeyboard(keyboard, layout, keyData, overwriteGlobalMapping = fal
             const keyLocDim = keyboard.positions[keyCounter];
             const virtualKey = row[j];
             const hostKey = hostRow[j];
+            // console.log("_-------------------------")
+            // console.log(i, j);
+            // console.log(row)
+            // console.log(hostRow);
+            // console.log(virtualKey)
             if (overwriteGlobalMapping) {
                 MAPPING_TABLE[hostKey.keyCode] = virtualKey.keyCode
             }
