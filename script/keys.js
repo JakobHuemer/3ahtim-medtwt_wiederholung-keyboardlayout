@@ -161,9 +161,12 @@ const KEY_DATA = [
     },
     {
         keys: FRENCH_KEYS,
+        layouts: [],
+
     },
     {
         keys: JAPANESE_KEYS,
+        layouts: [],
     },
 ];
 

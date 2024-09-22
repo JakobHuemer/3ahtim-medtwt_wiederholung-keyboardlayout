@@ -121,7 +121,8 @@ body {
     font-family: "Ubuntu Mono", sans-serif;
     color: black;
     font-weight: 700;
-    width: 95%;
+    height: 40rem;
+    width: 90%;
 
     position: relative;
 }

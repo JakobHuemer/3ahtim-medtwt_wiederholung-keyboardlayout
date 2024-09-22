@@ -11,14 +11,15 @@ function displayKeyboard(keyboard, layout, keyData, overwriteGlobalMapping = fal
 
     // creating the actual keys by passing language data as keyData
     // key bindings for the codes
-    const keySet = craftKeySet(keyData);
+    console.log(keyData)
+    const keySet = craftKeySet(keyData.keys);
 
     // changing order of the keys for a specific layout
     // transform order of the keys
     const craftedLayout = layout.withKeys(keySet);
     const hostLayout = LAYOUT.Default.withKeys(keySet);
 
-    console.log(craftedLayout)
+    console.log(craftedLayout);
 
     // the 2d array of the kb layout with the crafted keys for their own language
     // put the keys on a 2d layout
@@ -39,13 +40,13 @@ function displayKeyboard(keyboard, layout, keyData, overwriteGlobalMapping = fal
             const keyLocDim = keyboard.positions[keyCounter];
             const virtualKey = row[j];
             const hostKey = hostRow[j];
-            // console.log("_-------------------------")
-            // console.log(i, j);
-            // console.log(row)
-            // console.log(hostRow);
-            // console.log(virtualKey)
+            console.log("_-------------------------")
+            console.log(i, j);
+            console.log(row)
+            console.log(hostRow);
+            console.log(virtualKey)
             if (overwriteGlobalMapping) {
-                MAPPING_TABLE[hostKey.keyCode] = virtualKey.keyCode
+                MAPPING_TABLE[hostKey.keyCode] = virtualKey.keyCode;
             }
             keyboardElement.innerHTML += `
                 <div
@@ -62,7 +63,7 @@ function displayKeyboard(keyboard, layout, keyData, overwriteGlobalMapping = fal
         }
     }
 
-    console.log(MAPPING_TABLE)
+    console.log(MAPPING_TABLE);
 
 
     // size * 4 + "em"
@@ -73,6 +74,26 @@ function displayKeyboard(keyboard, layout, keyData, overwriteGlobalMapping = fal
     resizeKeyboardAccordingToItsActualWidth(keyboardElement);
 
     return keyboardElement;
+}
+
+function randomKeyboard(overwriteGlobalMapping = false, keyboardElement = document.createElement('div')) {
+
+    let keyboardChoices = Object.values(KEYBOARD);
+    let keyboard = keyboardChoices[Math.floor(Math.random() * keyboardChoices.length)];
+
+    let keyData = KEY_DATA[Math.floor(Math.random() * KEY_DATA.length)];
+
+    let layoutChoices = [LAYOUT.Default, ...keyData.layouts];
+    let layout = layoutChoices[Math.floor(Math.random() * layoutChoices.length)];
+
+    console.log(keyboard);
+    console.log('-----------------------');
+    console.log(keyData);
+    console.log('-----------------------');
+    console.log(layout);
+
+    return displayKeyboard(keyboard, layout, keyData, overwriteGlobalMapping, keyboardElement);
+
 }
 
 function switchTheme(theme, keyboardElement) {
@@ -91,18 +112,24 @@ function resizeKeyboardAccordingToItsActualWidth(keyboardElement) {
 
 
     let keyboardWidth = parseFloat(window.getComputedStyle(keyboardElement).width);
-
-    // width in em with current font size
+    let keyboardHeight = parseFloat(window.getComputedStyle(keyboardElement).height);
     let keyboardDataWidth = parseFloat(keyboardElement.getAttribute('data-size-width'));
     let keyboardDataHeight = parseFloat(keyboardElement.getAttribute('data-size-height'));
 
-    console.log(keyboardWidth, keyboardDataWidth, keyboardDataHeight);
-    let newFontSize = keyboardWidth / (KEY_SIZE * keyboardDataWidth);
+    let newFontSize;
+
+    if (keyboardWidth) {
+        newFontSize = keyboardWidth / (KEY_SIZE * keyboardDataWidth);
+        keyboardElement.style.height = newFontSize * KEY_SIZE * keyboardDataHeight + 'px';
+    } else {
+        newFontSize = keyboardHeight / (KEY_SIZE * keyboardDataHeight);
+        keyboardElement.style.width = newFontSize * KEY_SIZE * keyboardDataWidth + 'px';
+    }
+    // width in em with current font size
+
 
     keyboardElement.style.fontSize = newFontSize + 'px';
-    keyboardElement.style.height = newFontSize * KEY_SIZE * keyboardDataHeight + 'px';
 
-    console.log(newFontSize);
 
 }
 
