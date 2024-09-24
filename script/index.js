@@ -1,6 +1,8 @@
 const KEY_SIZE = parseInt(window.getComputedStyle(document.body).getPropertyValue('--key-root-size'));
 const KEY_SIDE_PADDING_EM = window.getComputedStyle(document.body).getPropertyValue('--key-side-padding');
 
+const keyboardSlotElement = document.querySelector('.keyboard-placeholder');
+
 // DOM management code for general that runs all times
 
 window.addEventListener('resize', () => {
@@ -31,7 +33,7 @@ window.addEventListener('resize', () => {
 // select an order in which the keys are used in this language -> layouts.json (LAYOUT)
 const kbElement = displayKeyboard(KEYBOARD.FULL_SIZED, KEY_DATA[1].layouts[1], KEY_DATA[1], true);
 // const kbElement = randomKeyboard(true);
-document.body.appendChild(kbElement);
+keyboardSlotElement.appendChild(kbElement);
 
 switchTheme(THEMES.CATPPUCCIN_MOCHA, kbElement);
 

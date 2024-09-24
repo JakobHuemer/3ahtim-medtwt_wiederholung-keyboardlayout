@@ -281,7 +281,7 @@ const KEYBOARD = {
             { x: 0, y: 5 + 5 * GAP_SIZE, width: 1.25 + GAP_SIZE, height: 1 },   // Left Ctrl (width increased by GAP_SIZE)
             { x: 1.25 + 2 * GAP_SIZE, y: 5 + 5 * GAP_SIZE, width: 1.25 + GAP_SIZE, height: 1 },// Left Win (x position and width adjusted)
             { x: 2.5 + 4 * GAP_SIZE, y: 5 + 5 * GAP_SIZE, width: 1.25 + 2 * GAP_SIZE, height: 1 },// Left Alt (x position and width adjusted)
-            { x: 3.75 + 7 * GAP_SIZE, y: 5 + 5 * GAP_SIZE, width: 6 + GAP_SIZE, height: 1 },// Space (x position and width adjusted)
+            { x: 3.75 + 7 * GAP_SIZE, y: 5 + 5 * GAP_SIZE, width: 5.5 - GAP_SIZE, height: 1 },// Space (x position and width adjusted)
             { x: 9 + 9 * GAP_SIZE, y: 5 + 5 * GAP_SIZE, width: 1, height: 1 },// Right Alt (x position and width adjusted)
             { x: 10 + 10 * GAP_SIZE, y: 5 + 5 * GAP_SIZE, width: 1, height: 1 },// Right Win (x position and width adjusted)
             { x: 11 + 11 * GAP_SIZE, y: 5 + 5 * GAP_SIZE, width: 1, height: 1 },// Menu (x position and width adjusted)
