@@ -838,7 +838,7 @@ const KEYBOARD = {
 
     },
     MACBOOK: {
-        displayName: 'MacBook Pro M2 Pro',
+        displayName: 'MacBook Pro 2020+',
         description: `
     <h2>MacBook Pro M2 Pro Keyboard</h2>
     <p>Compact keyboard layout for the MacBook Pro M2 Pro. Features a 78-key layout with a touch bar, 
@@ -853,8 +853,10 @@ const KEYBOARD = {
                 [...layout[2].slice(0, 14)],
                 [...layout[3].slice(0, 13)],
                 [...layout[4].slice(0, 12)],
+                // [GLOBAL_KEY.GLOBE, layout[5][7], layout[5][2], layout[5][1], layout[5][3],
+                //     layout[5][5], layout[5][4], layout[5][8], layout[4][12], layout[5][9], layout[5][10]
                 [GLOBAL_KEY.GLOBE, layout[5][7], layout[5][2], layout[5][1], layout[5][3],
-                    layout[5][5], layout[5][4], layout[5][8], layout[4][12], layout[5][9], layout[5][10]],
+                    layout[5][5], layout[5][4], layout[5][8], GLOBAL_KEY.HALF_ARROW_UP, GLOBAL_KEY.HALF_ARROW_DOWN, layout[5][10]],
             ];
         },
         positions: [

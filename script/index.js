@@ -37,7 +37,7 @@ const globalProps = {
     keyboardChoice: 0,
     keyDataChoice: 0,
     layoutChoice: 0,
-    theme: THEMES.CLEAN_WHITE,
+    theme: THEMES.ADULT_SITE_THEME
 };
 
 // let kbElement = displayKeyboard(KEYBOARD.FULL_SIZED, LAYOUT.Default, KEY_DATA[0], false);

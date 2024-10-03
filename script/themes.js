@@ -97,5 +97,45 @@ const THEMES = {
         "--key-color-front": "#4CAF50",
         "--key-color-side": "#FF6B6B",
         "--key-color-back": "#FFD700",
+    },
+    GOLD: {
+        "--key-color-top-prim": "#dab438",
+        "--key-color-top-sec": "#c5a028",
+        "--key-color-front": "#b69121",
+        "--key-color-side": "#a78f19",
+        "--key-color-back": "#987110",
+        "--key-font-color": "#ffffff"
+    },
+    I_AM_FROM_AUSTRIA: {
+        "--key-color-top-prim": "#FFF",
+        "--key-color-top-sec": "#FFF",
+        "--key-color-front": "#c9072a",
+        "--key-color-side": "#FFF",
+        "--key-color-back": "#c9072a",
+        "--key-font-color": "#c9072a"
+    },
+    BLACK_AND_WHITE: {
+        "--key-color-top-prim": "#ffffff",
+        "--key-color-top-sec": "#e0e0e0",
+        "--key-color-front": "#b0b0b0",
+        "--key-color-side": "#808080",
+        "--key-color-back": "#404040",
+        "--key-font-color": "#000000"
+    },
+    BLACK_AND_YELLOW: {
+        "--key-color-top-prim": "#1a1a1a",
+        "--key-color-top-sec": "#1a1a1a",
+        "--key-color-front": "#e1bf0a",
+        "--key-color-side": "#d0b005",
+        "--key-color-back": "#968002",
+        "--key-font-color": "#ffffff"
+    },
+    ADULT_SITE_THEME: {
+        "--key-color-top-prim": "#1b1b1b",
+        "--key-color-top-sec": "#252525",
+        "--key-color-front": "#ff7d22",
+        "--key-color-side": "#ff6600",
+        "--key-color-back": "#ff4400",
+        "--key-font-color": "#ffffff"
     }
 }

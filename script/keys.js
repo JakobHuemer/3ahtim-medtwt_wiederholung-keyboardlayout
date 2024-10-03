@@ -158,19 +158,33 @@ const KEY_DATA = [
         keys: GERMAN_KEYS,
         layouts: [
             LAYOUT.Neo,
-            LAYOUT.BEPO
+            LAYOUT.BEPO,
         ],
     },
     {
         displayName: 'French',
         keys: FRENCH_KEYS,
-        layouts: [],
+        layouts: [
+            LAYOUT.FRENCH_BEPO,
+            LAYOUT.Lafayette,
+        ],
 
     },
     {
         displayName: 'Japanese',
         keys: JAPANESE_KEYS,
-        layouts: [],
+        layouts: [
+            LAYOUT.Tron,
+            LAYOUT.NICOLA,
+        ],
+    },
+    {
+        displayName: 'Russian',
+        keys: RUSSIAN_KEYS,
+        layouts: [
+            LAYOUT.Dictor,
+            LAYOUT.Zamarashkina,
+        ],
     },
 ];
 
@@ -321,5 +335,18 @@ const GLOBAL_KEY = {
         keyTop.appendChild(fpElement);
 
         return fingerPrintKey;
+    })(),
+    HALF_ARROW_UP: (() => {
+        let up_key = new Key(KEYCODE.UP, 'UP', ['▲']);
+        up_key.element.querySelector('.key-top').style.height = '60%';
+
+        return up_key;
+    })(),
+
+    HALF_ARROW_DOWN: (() => {
+        let down_key = new Key(KEYCODE.DOWN, 'DOWN', ['▼']);
+        down_key.element.querySelector('.key-top').style.height = '60%';
+
+        return down_key;
     })(),
 };

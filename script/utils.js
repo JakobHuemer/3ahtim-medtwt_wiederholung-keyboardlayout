@@ -176,6 +176,7 @@ const nav = {
     buildYourOwn() {
         switchStage('keyboard');
         globalProps.layoutChoice = 0;
+        registerMappingTable()
         renderCurrentKeyboard()
     },
 
