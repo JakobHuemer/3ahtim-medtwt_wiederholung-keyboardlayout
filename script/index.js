@@ -8,7 +8,7 @@ const confKeyboardsElement = document.querySelector('.config-keyboards .config-o
 const confLanguageElement = document.querySelector('.config-language .config-options');
 const confLayoutElement = document.querySelector('.config-layout .config-options');
 
-const confKeyPaneElement = document.querySelector(".key-pane")
+const confKeyPaneElement = document.querySelector('.key-pane');
 // DOM management code for general that runs all times
 
 window.addEventListener('resize', () => {
@@ -31,13 +31,12 @@ window.addEventListener('resize', () => {
 })).observe(document.body, { attributes: true, childList: true, subtree: true });
 
 
-
 const globalProps = {
     // index of choice arrays
     keyboardChoice: 0,
     keyDataChoice: 0,
     layoutChoice: 0,
-    theme: THEMES.ADULT_SITE_THEME
+    theme: THEMES.CLEAN_WHITE,
 };
 
 // let kbElement = displayKeyboard(KEYBOARD.FULL_SIZED, LAYOUT.Default, KEY_DATA[0], false);

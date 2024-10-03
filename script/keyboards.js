@@ -855,8 +855,8 @@ const KEYBOARD = {
                 [...layout[4].slice(0, 12)],
                 // [GLOBAL_KEY.GLOBE, layout[5][7], layout[5][2], layout[5][1], layout[5][3],
                 //     layout[5][5], layout[5][4], layout[5][8], layout[4][12], layout[5][9], layout[5][10],
-                    [GLOBAL_KEY.GLOBE, layout[5][7], layout[5][2], layout[5][1], layout[5][3],
-                        layout[5][5], layout[5][4], layout[5][8], GLOBAL_KEY.HALF_ARROW_UP, GLOBAL_KEY.HALF_ARROW_DOWN, layout[5][10]
+                [GLOBAL_KEY.GLOBE, layout[5][7], layout[5][2], layout[5][1], layout[5][3],
+                    layout[5][5], layout[5][4], layout[5][8], GLOBAL_KEY.HALF_ARROW_UP, GLOBAL_KEY.HALF_ARROW_DOWN, layout[5][10],
                 ],
             ];
         },

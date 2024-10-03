@@ -13,9 +13,9 @@ function renderCurrentKeyboard() {
     let kbElement = displayKeyboard(
         Object.values(KEYBOARD)[globalProps.keyboardChoice],
         globalProps.layoutChoice === 0 ? LAYOUT.Default : KEY_DATA[globalProps.keyDataChoice].layouts[globalProps.layoutChoice - 1],
-        KEY_DATA[globalProps.keyDataChoice]
-    )
-    keyboardSlotElement.appendChild(kbElement)
+        KEY_DATA[globalProps.keyDataChoice],
+    );
+    keyboardSlotElement.appendChild(kbElement);
 
 }
 
@@ -103,9 +103,9 @@ function randomKeyboard(overwriteGlobalMapping = false, keyboardElement = docume
 }
 
 function renderTheme() {
-    document.querySelectorAll(".keyboard").forEach(keyboardElement => {
-        applyTheme(keyboardElement)
-    })
+    document.querySelectorAll('.keyboard').forEach(keyboardElement => {
+        applyTheme(keyboardElement);
+    });
 }
 
 function applyTheme(kbElement) {
@@ -139,8 +139,8 @@ function resizeKeyboardAccordingToItsActualWidth(keyboardElement) {
 
 function changeProp(button, prop, val) {
 
-    button.parentNode.querySelectorAll("button").forEach(e => e.classList.remove("selected"));
-    button.classList.add("selected")
+    button.parentNode.querySelectorAll('button').forEach(e => e.classList.remove('selected'));
+    button.classList.add('selected');
     globalProps[prop] = val;
     if (prop === 'layoutChoice') {
         registerMappingTable();
@@ -176,8 +176,8 @@ const nav = {
     buildYourOwn() {
         switchStage('keyboard');
         globalProps.layoutChoice = 0;
-        registerMappingTable()
-        renderCurrentKeyboard()
+        registerMappingTable();
+        renderCurrentKeyboard();
     },
 
     loadEditor() {
@@ -192,8 +192,8 @@ const nav = {
     },
 
     endScreen() {
-        switchStage("end")
-        document.querySelector("h1.end-text").style.display = "block"
+        switchStage('end');
+        document.querySelector('h1.end-text').style.display = 'block';
         document.querySelector('main').style.gridTemplateRows = '3fr 4fr 2fr';
     },
 };

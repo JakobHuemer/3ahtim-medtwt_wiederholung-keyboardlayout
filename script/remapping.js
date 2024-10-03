@@ -45,7 +45,7 @@ document.addEventListener('visibilitychange', e => {
 
 
 function registerMappingTable() {
-    console.log("REGISTERING MAPPING TABLE")
+    console.log('REGISTERING MAPPING TABLE');
     const keySet = craftKeySet(KEY_DATA[globalProps.keyDataChoice].keys);
 
     let layout = globalProps.layoutChoice === 0 ? LAYOUT.Default
