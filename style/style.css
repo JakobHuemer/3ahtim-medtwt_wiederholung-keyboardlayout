@@ -355,7 +355,8 @@ main {
 
 .conf[data-s="keyboard"] .config-keyboards,
 .conf[data-s="layout"] .config-layout,
-.conf[data-s="language"] .config-language {
+.conf[data-s="language"] .config-language,
+.conf[data-s="end"] .config-end {
 
     display: grid;
     place-items: center;
@@ -366,4 +367,7 @@ main {
 
 .conf[data-s="language"] .config-language button {
     text-transform: capitalize;
+}
+
+.conf[data-s="end"] .config-end {
 }

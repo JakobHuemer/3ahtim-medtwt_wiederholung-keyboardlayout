@@ -24,15 +24,15 @@
 </head>
 <body>
 <main>
-    <h1>Customize your Keyboard</h1>
+    <h1>Keyboard customizer</h1>
+    <h1 style="display: none" class="end-text">Your keyboard is done!</h1>
     <div class="keyboard-placeholder">
 
     </div>
 
     <div class="configuration conf" data-s="start">
         <div class="start">
-            <button onclick="nav.useThisLayout()">Use this layout!</button>
-            <button onclick="nav.buildYourOwn()">Build your own</button>
+            <button onclick="nav.buildYourOwn()">Start building!</button>
         </div>
 
         <div class="config config-keyboards">
@@ -44,27 +44,19 @@
 
         <div class="config config-language">
             <div class="config-options">
-                <button onclick="changeProp(this, 'keyDataChoice', 0)">Default</button>
-                <button onclick="changeProp(this, 'keyDataChoice', 1)">Other</button>
             </div>
-            <button class="next-button" onclick="switchStage('layout')">Next</button>
+            <button class="next-button" onclick="switchStage('layout'); populateLayoutOptions()">Next</button>
         </div>
 
         <div class="config config-layout">
             <div class="config-options">
-                <button>Hello</button>
-                <button>Hello wolrd</button>
             </div>
-            <button class="next-button" onclick="nav.loadEditor()">Next</button>
+            <button class="next-button" onclick="nav.endScreen()">Next</button>
         </div>
 
-        <div class="editor-pane">
-            <div class="key-pane">
-
-            </div>
-
+        <div class="config config-end">
+            <button onclick="location.reload()">Go again!</button>
         </div>
-
 
     </div>
 </main>

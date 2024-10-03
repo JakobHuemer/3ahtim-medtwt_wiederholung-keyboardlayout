@@ -31,7 +31,6 @@ function onKey(e) {
     }
 
 
-
 }
 
 window.addEventListener('keydown', onKey);
@@ -43,3 +42,35 @@ document.addEventListener('visibilitychange', e => {
         });
     }
 });
+
+
+function registerMappingTable() {
+    console.log("REGISTERING MAPPING TABLE")
+    const keySet = craftKeySet(KEY_DATA[globalProps.keyDataChoice].keys);
+
+    let layout = globalProps.layoutChoice === 0 ? LAYOUT.Default
+        : KEY_DATA[globalProps.keyDataChoice].layouts[globalProps.layoutChoice - 1];
+
+    const craftedLayout = layout.withKeys(keySet);
+    const hostLayout = LAYOUT.Default.withKeys(keySet);
+
+
+    let keyboard = Object.values(KEYBOARD)[globalProps.keyboardChoice];
+    let kbLayout = keyboard.withLayout(craftedLayout);
+    let hostKbLayout = keyboard.withLayout(hostLayout);
+
+    MAPPING_TABLE = {};
+
+    for (let i = 0; i < kbLayout.length; i++) {
+        let row = kbLayout[i];
+        let hostRow = hostKbLayout[i];
+        for (let j = 0; j < row.length; j++) {
+            const virtualKey = row[j];
+            const hostKey = hostRow[j];
+
+            MAPPING_TABLE[hostKey.keyCode] = virtualKey.keyCode;
+
+        }
+    }
+
+}

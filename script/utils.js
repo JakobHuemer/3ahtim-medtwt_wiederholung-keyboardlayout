@@ -12,7 +12,7 @@ function renderCurrentKeyboard() {
 
     let kbElement = displayKeyboard(
         Object.values(KEYBOARD)[globalProps.keyboardChoice],
-        globalProps.layoutChoice === 0 ? LAYOUT.Default : KEY_DATA[globalProps.keyDataChoice - 1].layouts[globalProps.layoutChoice],
+        globalProps.layoutChoice === 0 ? LAYOUT.Default : KEY_DATA[globalProps.keyDataChoice].layouts[globalProps.layoutChoice - 1],
         KEY_DATA[globalProps.keyDataChoice]
     )
     keyboardSlotElement.appendChild(kbElement)
@@ -69,8 +69,6 @@ function displayKeyboard(keyboard, layout, keyData, overwriteGlobalMapping = fal
             keyCounter++;
         }
     }
-
-    console.log(MAPPING_TABLE);
 
 
     // size * 4 + "em"
@@ -140,9 +138,13 @@ function resizeKeyboardAccordingToItsActualWidth(keyboardElement) {
 }
 
 function changeProp(button, prop, val) {
-    button.parentNode.querySelectorAll("button").forEach(e => e.classList.remove("selected"))
+
+    button.parentNode.querySelectorAll("button").forEach(e => e.classList.remove("selected"));
     button.classList.add("selected")
     globalProps[prop] = val;
+    if (prop === 'layoutChoice') {
+        registerMappingTable();
+    }
     renderCurrentKeyboard();
 }
 
@@ -153,7 +155,16 @@ function switchStage(stage) {
 }
 
 function populateLayoutOptions() {
+    let layouts = [LAYOUT.Default, ...KEY_DATA[globalProps.keyDataChoice].layouts];
 
+    for (let i = 0; i < layouts.length; i++) {
+        let layout = layouts[i];
+        if (i === globalProps.layoutChoice) {
+            confLayoutElement.innerHTML += `<button class="selected" onclick="changeProp(this, 'layoutChoice', ${ i })">${ layout.name }</button>`;
+        } else {
+            confLayoutElement.innerHTML += `<button onclick="changeProp(this, 'layoutChoice', ${ i })">${ layout.name }</button>`;
+        }
+    }
 }
 
 const nav = {
@@ -164,9 +175,24 @@ const nav = {
 
     buildYourOwn() {
         switchStage('keyboard');
+        globalProps.layoutChoice = 0;
+        renderCurrentKeyboard()
     },
 
     loadEditor() {
         switchStage('editor');
+
+        // populate key pane with all keys
+        let keys = KEY_DATA[globalProps.keyDataChoice].keys;
+
+        for (let i = 0; i < keys.length; i++) {
+            confKeyPaneElement.innerHTML += '';
+        }
+    },
+
+    endScreen() {
+        switchStage("end")
+        document.querySelector("h1.end-text").style.display = "block"
+        document.querySelector('main').style.gridTemplateRows = '3fr 4fr 2fr';
     },
 };
