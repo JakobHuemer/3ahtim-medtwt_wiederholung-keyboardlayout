@@ -29,9 +29,42 @@
 
     </div>
 
-    <div class="buttons">
-        <button>Use this layout!</button>
-        <button>Build your own</button>
+    <div class="configuration conf" data-s="start">
+        <div class="start">
+            <button onclick="nav.useThisLayout()">Use this layout!</button>
+            <button onclick="nav.buildYourOwn()">Build your own</button>
+        </div>
+
+        <div class="config config-keyboards">
+            <div class="config-options">
+            </div>
+
+            <button class="next-button" onclick="switchStage('language')">Next</button>
+        </div>
+
+        <div class="config config-language">
+            <div class="config-options">
+                <button onclick="changeProp(this, 'keyDataChoice', 0)">Default</button>
+                <button onclick="changeProp(this, 'keyDataChoice', 1)">Other</button>
+            </div>
+            <button class="next-button" onclick="switchStage('layout')">Next</button>
+        </div>
+
+        <div class="config config-layout">
+            <div class="config-options">
+                <button>Hello</button>
+                <button>Hello wolrd</button>
+            </div>
+            <button class="next-button" onclick="nav.loadEditor()">Next</button>
+        </div>
+
+        <div class="editor-pane">
+            <div class="key-pane">
+
+            </div>
+
+        </div>
+
 
     </div>
 </main>

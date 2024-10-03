@@ -145,6 +145,7 @@ const availableKeyData = {};
 // select which key bindings to use.
 const KEY_DATA = [
     {
+        displayName: 'US',
         keys: US_KEYS,
         layouts: [
             LAYOUT.Dvorak,
@@ -153,6 +154,7 @@ const KEY_DATA = [
         ],
     },
     {
+        displayName: 'German',
         keys: GERMAN_KEYS,
         layouts: [
             LAYOUT.Neo,
@@ -160,11 +162,13 @@ const KEY_DATA = [
         ],
     },
     {
+        displayName: 'French',
         keys: FRENCH_KEYS,
         layouts: [],
 
     },
     {
+        displayName: 'Japanese',
         keys: JAPANESE_KEYS,
         layouts: [],
     },
